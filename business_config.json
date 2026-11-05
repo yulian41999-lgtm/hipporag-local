@@ -1,0 +1,11 @@
+{
+  "raw_dir": "data/banking/D01_银行业务与审慎监管",
+  "corpus_file": "outputs/banking/corpus.json",
+  "index_dir": "outputs/banking/index",
+  "questions_file": "data/banking/银行监管测试集/questions.json",
+  "predictions_file": "outputs/banking/predictions.json",
+  "retrieval_top_k": 20,
+  "qa_top_k": 5,
+  "context_bge_token_budget": 3072,
+  "chunk_overlap_tokens": 64
+}

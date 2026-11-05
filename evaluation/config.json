@@ -1,0 +1,16 @@
+{
+  "metrics": ["context_relevancy", "evidence_recall", "rouge_l", "answer_correctness"],
+  "profile": "banking-four-metrics-v1",
+  "rouge_tokenizer": "zh-char-alnum-v1",
+  "judge_model": "qwen3.8-27B-raw",
+  "judge_base_url": "http://10.253.170.81:8006/v1",
+  "judge_api_key_env": "HIPPO_LLM_API_KEY",
+  "judge_temperature": 0,
+  "judge_timeout_seconds": 90,
+  "judge_max_tokens": 3072,
+  "max_judge_input_characters": 60000,
+  "judge_retries": 1,
+  "embedding_max_seq_length": 2048,
+  "expected_question_count": 15,
+  "correctness_weights": [0.75, 0.25]
+}

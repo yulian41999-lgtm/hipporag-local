@@ -1,0 +1,18 @@
+{
+  "mode": "graph",
+  "core_qa_seconds": 159.2653635861352,
+  "overall_calendar_seconds": 166.1591696543619,
+  "retrieval_preparation_seconds": 3.220244803465903,
+  "preflight_calls": 0,
+  "cache_condition": "fresh process and empty local LLM response cache; provider/OS cache uncontrolled",
+  "api_attempts": 30,
+  "saved_api_responses": 30,
+  "responses_missing_usage": 0,
+  "input_tokens": 60250,
+  "output_tokens": 7737,
+  "total_tokens": 67987,
+  "api_attempt_seconds_sum": 139.08601519837976,
+  "api_response_seconds_sum": 139.08601519837976,
+  "api_response_seconds_mean": 4.636200506612658,
+  "accounting": "service usage; SDK retries disabled; errors without usage have unknown consumption"
+}

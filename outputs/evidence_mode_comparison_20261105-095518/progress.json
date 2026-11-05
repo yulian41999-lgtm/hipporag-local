@@ -1,0 +1,32 @@
+[
+  {
+    "mode": "original",
+    "phase": "answer",
+    "exit_code": 0
+  },
+  {
+    "mode": "original",
+    "phase": "export",
+    "exit_code": 0
+  },
+  {
+    "mode": "original",
+    "phase": "evaluate",
+    "exit_code": 2
+  },
+  {
+    "mode": "graph",
+    "phase": "answer",
+    "exit_code": 0
+  },
+  {
+    "mode": "graph",
+    "phase": "export",
+    "exit_code": 0
+  },
+  {
+    "mode": "graph",
+    "phase": "evaluate",
+    "exit_code": 0
+  }
+]

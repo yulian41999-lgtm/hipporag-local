@@ -1,0 +1,8 @@
+{
+  "report": "/home/ailab/data/HippoRAG/hipporag_local/reports/单跳与多跳检索问答评测报告_2026-10-30.md",
+  "historical_backup": "/home/ailab/data/HippoRAG/hipporag_local/reports/单跳与多跳检索问答评测报告_2026-10-30.md.before-20261105.bak",
+  "backup_sha256": "b513a6944813412687225b5c4586a20c21b2c21f56c57a7e237b77002d4278f3",
+  "updated_sha256": "2b76a7c570f7499b8bf0d0de1110dae0fe37b4a297640ff630735c6d005e6c6d",
+  "source_comparison": "/home/ailab/data/HippoRAG/hipporag_local/outputs/evidence_mode_comparison_20261105-095518/comparison.json",
+  "new_model_calls": 0
+}

@@ -1,0 +1,14 @@
+{
+  "source": "/home/ailab/data/HippoRAG/hipporag_local/outputs/server_native_full_c4_20261030-105942",
+  "target": "/home/ailab/data/HippoRAG/hipporag_local/outputs/server_1700_recovered_20261030-163200",
+  "backup": "/home/ailab/data/HippoRAG/hipporag_local/outputs/recovery_backups/triples_20261030-163200",
+  "source_cache_rows": 10676,
+  "document_count": 1700,
+  "chunk_count": 5337,
+  "source_code_sha256": "6c3f2a28dd66b44a9845b70237fe2b92d0d6538b2f3a2ea6dfbf33b0129ef385",
+  "patched_code_sha256": "75950c1281d29b5c43b49890aa81776bf6bde29778d86b46e3a3a58f16ae6340",
+  "original_cache_modified": false,
+  "openie_max_workers": 4,
+  "entity_batch_size": 64,
+  "fact_batch_size": 32
+}

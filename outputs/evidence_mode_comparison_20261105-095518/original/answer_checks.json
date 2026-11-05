@@ -1,0 +1,107 @@
+[
+  {
+    "id": "Compliance-F001",
+    "status": "ok",
+    "empty_answer": false,
+    "references_valid": true,
+    "has_reference": true
+  },
+  {
+    "id": "Compliance-F002",
+    "status": "ok",
+    "empty_answer": false,
+    "references_valid": true,
+    "has_reference": true
+  },
+  {
+    "id": "Compliance-F003",
+    "status": "ok",
+    "empty_answer": false,
+    "references_valid": true,
+    "has_reference": true
+  },
+  {
+    "id": "Compliance-F004",
+    "status": "ok",
+    "empty_answer": false,
+    "references_valid": true,
+    "has_reference": true
+  },
+  {
+    "id": "Compliance-F005",
+    "status": "ok",
+    "empty_answer": false,
+    "references_valid": true,
+    "has_reference": true
+  },
+  {
+    "id": "Compliance-F006",
+    "status": "ok",
+    "empty_answer": false,
+    "references_valid": true,
+    "has_reference": true
+  },
+  {
+    "id": "Compliance-F007",
+    "status": "ok",
+    "empty_answer": false,
+    "references_valid": true,
+    "has_reference": true
+  },
+  {
+    "id": "Compliance-F008",
+    "status": "ok",
+    "empty_answer": false,
+    "references_valid": true,
+    "has_reference": true
+  },
+  {
+    "id": "Compliance-F009",
+    "status": "ok",
+    "empty_answer": false,
+    "references_valid": true,
+    "has_reference": true
+  },
+  {
+    "id": "Compliance-F010",
+    "status": "ok",
+    "empty_answer": false,
+    "references_valid": true,
+    "has_reference": true
+  },
+  {
+    "id": "Compliance-R001",
+    "status": "ok",
+    "empty_answer": false,
+    "references_valid": true,
+    "has_reference": true
+  },
+  {
+    "id": "Compliance-R002",
+    "status": "ok",
+    "empty_answer": false,
+    "references_valid": true,
+    "has_reference": true
+  },
+  {
+    "id": "Compliance-R003",
+    "status": "ok",
+    "empty_answer": false,
+    "references_valid": true,
+    "has_reference": true
+  },
+  {
+    "id": "Compliance-R004",
+    "status": "ok",
+    "empty_answer": false,
+    "references_valid": true,
+    "has_reference": true
+  },
+  {
+    "id": "Compliance-R005",
+    "status": "ok",
+    "empty_answer": false,
+    "references_valid": true,
+    "has_reference": true
+  }
+]

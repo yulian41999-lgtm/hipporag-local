@@ -1,0 +1,6 @@
+{"task": "Compliance-R001/answer_statements", "status": "reused", "original_attempt": 0, "payload_sha256": "d52f3e1e0899ecac9151991d120aab628eb6941d9fed4e2ab867d7f2507f96fe"}
+{"task": "Compliance-R001/reference_statements", "status": "reused", "original_attempt": 0, "payload_sha256": "14e15bc2586184deaa0381c10465d1e81c1c00e06aac0d217f0c6576d62bb882"}
+{"task": "Compliance-R003/answer_statements", "status": "reused", "original_attempt": 0, "payload_sha256": "60660c5d03cedaec460c670862043ae46527498440747187c46abef40bad3aa1"}
+{"task": "Compliance-R003/reference_statements", "status": "reused", "original_attempt": 0, "payload_sha256": "37b338b9efc8fb942a0b5c47645e593ec848a810ce0d5b8a4090b1eb81f96b98"}
+{"task": "Compliance-R004/answer_statements", "status": "reused", "original_attempt": 0, "payload_sha256": "fd751221d7829a6a05cc79617c6fe85e0ca7273a84028a936abfd8c56cbf3246"}
+{"task": "Compliance-R004/reference_statements", "status": "reused", "original_attempt": 0, "payload_sha256": "60f9b2d4a8830dcc552c6ee66b9d9ceff64730c8e0c3d36c0a3800c0b04c645c"}

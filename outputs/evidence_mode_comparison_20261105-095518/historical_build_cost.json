@@ -1,0 +1,25 @@
+{
+  "source": "outputs/server_1700_recovered_20261030-163200/index.log",
+  "scope": "historical cached recovery, not complete original building bill",
+  "phases": {
+    "NER:": {
+      "billable_prompt_tokens": 0,
+      "billable_completion_tokens": 0,
+      "logical_prompt_tokens": 2910951,
+      "logical_completion_tokens": 594629,
+      "num_cache_hit": 5337
+    },
+    "Extracting triples:": {
+      "billable_prompt_tokens": 0,
+      "billable_completion_tokens": 0,
+      "logical_prompt_tokens": 6734418,
+      "logical_completion_tokens": 2836057,
+      "num_cache_hit": 5337
+    }
+  },
+  "original_build_input_tokens": null,
+  "original_build_output_tokens": null,
+  "original_build_total_tokens": null,
+  "full_end_to_end_build_seconds": null,
+  "note": "logical usage replays stored responses; do not add to current actual API consumption"
+}

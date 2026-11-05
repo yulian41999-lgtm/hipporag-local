@@ -1,0 +1,15 @@
+.git
+**/.git
+.env
+.env.*
+!.env.example
+cache
+outputs
+dist
+**/__pycache__
+**/*.pyc
+**/*.egg-info
+corecoder-*.json
+environment-changes.json
+vendor/HippoRAG/outputs
+vendor/HippoRAG/images

@@ -1,0 +1,17 @@
+services:
+  hipporag:
+    image: hipporag-local:gpu
+    build:
+      args:
+        BASE_IMAGE: ${HIPPO_BASE_IMAGE:-python:3.10-slim-bookworm}
+        TORCH_INDEX_URL: https://download.pytorch.org/whl/cu121
+    environment:
+      HIPPO_DEVICE: cuda
+      HIPPO_OUTPUT_DIR: /app/outputs/docker_gpu
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

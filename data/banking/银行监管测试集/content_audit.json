@@ -1,0 +1,472 @@
+{
+  "version": "1.2",
+  "review_date": "2026-10-29",
+  "dataset_sha256": "cc3f65570dc86b5fb8314c810cd570fe7fba6d5f46c18190edfd6f9dda77f338",
+  "local_evidence_authentication_passed": true,
+  "local_semantic_review": "15题逐题核对完成；3题替换，另修订适用条件、受理用语及完整推理任务。该结论由模型复核，未经外部人工签署。",
+  "question_count": 15,
+  "distinct_document_count": 12,
+  "evidence_passages": 22,
+  "external_current_validity_fully_verified": false,
+  "external_validity_scope": "外部检索用于识别版本和主体风险，未完成全部12份来源截至核验日的现行效力穷尽确认；不能把本地证据通过标记解释为全部外部法规现行有效。",
+  "replaced_question_ids": [
+    "Compliance-F009",
+    "Compliance-R004",
+    "Compliance-R005"
+  ],
+  "withdrawn_source_ids": [
+    "DOC000647"
+  ],
+  "external_checks": [
+    {
+      "id": "EXT01",
+      "url": "https://shenzhen.pbc.gov.cn/shenzhen/122811/122830/122790/2025111422015969780/2023053118192234421.pdf",
+      "title": "中国人民银行深圳市中心支行主要规范性文件目录（更新于2021年9月）",
+      "supports": "目录第46项、第2页列出2017年修订通知，文号深人银发〔2017〕165号；说明2012年本地文本存在版本更新风险，不直接断言其具体条款已被废止。",
+      "action": "移除DOC000647及相关现行题目，不从外网补入新法规充作本地语料。"
+    },
+    {
+      "id": "EXT02",
+      "url": "https://www.pbc.gov.cn/zhengwugongkai/attachDir/2025/11/2025111914422147275.pdf",
+      "title": "中国人民银行金融消费者权益保护实施办法",
+      "supports": "第二条将该办法金融消费者定义为自然人；提示不得无证据将陕西2011年消保原则的金融消费者直接扩大到企业。该2020年定义不被追溯当作2011年地方原则的直接修订。",
+      "action": "原R005因本地适用证据不足被撤换，外部规则未作为新标准答案依据。"
+    },
+    {
+      "id": "EXT03",
+      "url": "https://www.pbc.gov.cn/zhengwugongkai/attachDir/2025/11/2025111817570451049.pdf",
+      "title": "中国人民银行行政许可实施办法（2020年）",
+      "supports": "官方公开文本第十六条与本地补正条款一致；该核对不等同穷尽截至核验日所有修改或废止决定。",
+      "action": "保留F007的本地条文依据。"
+    },
+    {
+      "id": "EXT04",
+      "url": "https://www.moj.gov.cn/pub/sfbgw/flfggz/flfggzbmgz/202101/t20210105_146426.html",
+      "title": "中华人民共和国外资银行管理条例实施细则（司法部公开文本）",
+      "supports": "第三十四条与本地2019年文本的外国银行分行存款保险声明要求一致。",
+      "action": "用于替换题F009的外部交叉核对；答案证据仍来自本地DOC000021。"
+    }
+  ],
+  "reviewed_questions": [
+    {
+      "id": "Compliance-F001",
+      "question": "外商独资银行开展国债承销业务，需要向银行业监管部门申请许可或报告吗？",
+      "local_semantic_verdict": "pass",
+      "rationale": "外商独资银行；第一项直接规定国债承销的许可豁免、5日报告及其他部门许可保留。没有擅自将5日改为5个工作日。",
+      "evidence_authentication": [
+        {
+          "evidence_id": "Compliance-F001-E1",
+          "doc_id": "DOC000773",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        }
+      ],
+      "supporting_scope_context": [],
+      "document_removal_analysis": {},
+      "changed_from_v1_1": false
+    },
+    {
+      "id": "Compliance-F002",
+      "question": "银行衍生产品业务的风险计量人员，可以兼任该业务的营销人员吗？",
+      "local_semantic_verdict": "pass",
+      "rationale": "第二十四条直接禁止风险计量、监测、控制人员与交易、营销人员兼任；没有把另一类交易人员隔离要求混为本题唯一依据。",
+      "evidence_authentication": [
+        {
+          "evidence_id": "Compliance-F002-E1",
+          "doc_id": "DOC000789",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        }
+      ],
+      "supporting_scope_context": [],
+      "document_removal_analysis": {},
+      "changed_from_v1_1": false
+    },
+    {
+      "id": "Compliance-F003",
+      "question": "银行接受企业提供的设备抵押，是否需要查询设备是否属于融资租赁物？",
+      "local_semantic_verdict": "pass",
+      "rationale": "第三项明确银行资金融出方的抵押审查及登记查询要求；没有将企业占有设备直接等同设备所有权。系统名称按本地版本保留，未宣称外部平台名称从未变更。",
+      "evidence_authentication": [
+        {
+          "evidence_id": "Compliance-F003-E1",
+          "doc_id": "DOC000178",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        }
+      ],
+      "supporting_scope_context": [],
+      "document_removal_analysis": {},
+      "changed_from_v1_1": false
+    },
+    {
+      "id": "Compliance-F004",
+      "question": "上海商业银行收到匿名客户投诉，可以因投诉人未署名而不予处理吗？",
+      "local_semantic_verdict": "pass_after_wording_fix",
+      "rationale": "第十三条支持匿名投诉记录、处理及核实后纠正；删除将记录处理义务扩写为无条件受理义务的措辞。仅按上海本地版本核验。",
+      "evidence_authentication": [
+        {
+          "evidence_id": "Compliance-F004-E1",
+          "doc_id": "DOC000782",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        }
+      ],
+      "supporting_scope_context": [],
+      "document_removal_analysis": {},
+      "changed_from_v1_1": true
+    },
+    {
+      "id": "Compliance-F005",
+      "question": "银行拟离职信贷关键岗位人员的离任审计发现不尽职行为，应在何时追责，是否需要报告监管？",
+      "local_semantic_verdict": "pass_after_scope_fix",
+      "rationale": "明确为拟离职信贷关键岗。第二项支持解除合同前依法依规追责、及时书面报告与涉嫌犯罪移交，不能把移交条件扩大到所有不尽职情形。",
+      "evidence_authentication": [
+        {
+          "evidence_id": "Compliance-F005-E1",
+          "doc_id": "DOC000774",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        }
+      ],
+      "supporting_scope_context": [],
+      "document_removal_analysis": {},
+      "changed_from_v1_1": true
+    },
+    {
+      "id": "Compliance-F006",
+      "question": "农村商业银行参与社团贷款，可以直接采用牵头社的信用评估，不再自行评估吗？",
+      "local_semantic_verdict": "pass",
+      "rationale": "第四十条支持成员社独立信用和风险评估；第五十一条确认农村商业银行属于适用主体；第二十九条说明独立评价不等于各成员必须重复向借款人调查取材。",
+      "evidence_authentication": [
+        {
+          "evidence_id": "Compliance-F006-E1",
+          "doc_id": "DOC000796",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        }
+      ],
+      "supporting_scope_context": [
+        {
+          "doc_id": "DOC000796",
+          "article": "第五十一条",
+          "quote": "第五十一条 本指引所称农村合作金融机构指农村信用社、联社、农村合作银行、农村商业银行。本指引所称社是指组成社团的内部成员单位。",
+          "independent_text_match": true
+        }
+      ],
+      "document_removal_analysis": {},
+      "changed_from_v1_1": false
+    },
+    {
+      "id": "Compliance-F007",
+      "question": "银行申请人民银行行政许可时，补正材料的要求可以分批告知吗？补正通知有哪些形式要求？",
+      "local_semantic_verdict": "pass",
+      "rationale": "第十六条第一款支持对所发现的需补正内容一次告知以及专用章、日期要素。本题不另行断言后续实质审查永远不得再要求解释。",
+      "evidence_authentication": [
+        {
+          "evidence_id": "Compliance-F007-E1",
+          "doc_id": "DOC000659",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        }
+      ],
+      "supporting_scope_context": [],
+      "document_removal_analysis": {},
+      "changed_from_v1_1": false
+    },
+    {
+      "id": "Compliance-F008",
+      "question": "陕西银行的金融消费者保护归口部门，需要配备专职管理人员和B岗吗？",
+      "local_semantic_verdict": "pass_local_snapshot_only",
+      "rationale": "第二条界定陕西辖内存款类金融机构，第六条第二款直接支持专职人员和B岗；未把地方配置要求扩展为全国统一标准。该地方文件当前外部效力未完整核实。",
+      "evidence_authentication": [
+        {
+          "evidence_id": "Compliance-F008-E1",
+          "doc_id": "DOC000661",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        }
+      ],
+      "supporting_scope_context": [
+        {
+          "doc_id": "DOC000661",
+          "article": "第二条第二款",
+          "quote": "本指导原则所称“金融机构”是指陕西省辖区各商业银行、农村合作金融机构、邮政储蓄银行等吸收存款、依法经营金融业务的存款类金融机构。",
+          "independent_text_match": true
+        }
+      ],
+      "document_removal_analysis": {},
+      "changed_from_v1_1": false
+    },
+    {
+      "id": "Compliance-F009",
+      "question": "外国银行分行开办存款业务时，需要向客户说明本行存款是否投保存款保险吗？",
+      "local_semantic_verdict": "replaced_and_pass",
+      "rationale": "移除存在后续修订版本线索的深圳2012年题目，改用本地2019年外资银行细则第三十四条；外国银行分行区别于外商独资银行，声明义务区别于实际是否投保。",
+      "evidence_authentication": [
+        {
+          "evidence_id": "Compliance-F009-E1",
+          "doc_id": "DOC000021",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        }
+      ],
+      "supporting_scope_context": [],
+      "document_removal_analysis": {},
+      "changed_from_v1_1": true
+    },
+    {
+      "id": "Compliance-F010",
+      "question": "银行进行重要信息系统上线测试，可以直接使用未经脱敏的客户敏感生产数据吗？",
+      "local_semantic_verdict": "pass",
+      "rationale": "所附全国办法第二条与第二十二条共同确认银行主体及测试环境敏感生产数据范围；未扩展为所有生产数据在生产环境中也须脱敏。",
+      "evidence_authentication": [
+        {
+          "evidence_id": "Compliance-F010-E1",
+          "doc_id": "DOC000783",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        }
+      ],
+      "supporting_scope_context": [],
+      "document_removal_analysis": {},
+      "changed_from_v1_1": false
+    },
+    {
+      "id": "Compliance-R001",
+      "question": "在沪外资法人银行将重大核心系统变更的风险评估外包后，董事会及高管层还应承担哪些审核和操作风险监控责任？",
+      "local_semantic_verdict": "pass_after_question_fix",
+      "rationale": "改为询问审核和操作风险监控两部分责任。系统办法第十一、十二条支持外包条件与内部审核，上海通知第一项支持最终监控责任，外包不转移后者。",
+      "evidence_authentication": [
+        {
+          "evidence_id": "Compliance-R001-E1",
+          "doc_id": "DOC000783",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        },
+        {
+          "evidence_id": "Compliance-R001-E2",
+          "doc_id": "DOC001111",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        }
+      ],
+      "supporting_scope_context": [
+        {
+          "doc_id": "DOC001111",
+          "article": "通知受文主体",
+          "quote": "在沪各外资法人银行、各外国银行分行：",
+          "independent_text_match": true
+        }
+      ],
+      "document_removal_analysis": {
+        "DOC000783": "缺少外部评估条件及重大项目报告审核要求。",
+        "DOC001111": "缺少在沪外资银行董事会及高管层对操作风险管理有效性监控的最终责任。"
+      },
+      "changed_from_v1_1": true
+    },
+    {
+      "id": "Compliance-R002",
+      "question": "农村商业银行以成员社参与设备抵押社团贷款，信用评估和融资租赁权属查询应如何分别落实，能否完全依赖牵头社？",
+      "local_semantic_verdict": "pass_after_question_fix",
+      "rationale": "改为完整询问信用评估及权属查询如何分别落实。成员社独立信用评估与银行接受设备抵押的登记查询分别有据；独立评估不被解释为必须重复实地调查。",
+      "evidence_authentication": [
+        {
+          "evidence_id": "Compliance-R002-E1",
+          "doc_id": "DOC000796",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        },
+        {
+          "evidence_id": "Compliance-R002-E2",
+          "doc_id": "DOC000178",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        }
+      ],
+      "supporting_scope_context": [
+        {
+          "doc_id": "DOC000796",
+          "article": "第五十一条",
+          "quote": "第五十一条 本指引所称农村合作金融机构指农村信用社、联社、农村合作银行、农村商业银行。本指引所称社是指组成社团的内部成员单位。",
+          "independent_text_match": true
+        },
+        {
+          "doc_id": "DOC000796",
+          "article": "第二十九条第二款",
+          "quote": "除牵头社和代理社外，其他成员社应主要以牵头社或代理社提供的借款人资料为依据对社团贷款进行独立评价，除非授权一般不直接向借款人索取资料或进行实地调查。",
+          "independent_text_match": true
+        }
+      ],
+      "document_removal_analysis": {
+        "DOC000796": "缺少社团成员社必须自行进行信用与风险独立评估的规则。",
+        "DOC000178": "缺少设备抵押融资的融资租赁权属查询和抵押审查要求。"
+      },
+      "changed_from_v1_1": true
+    },
+    {
+      "id": "Compliance-R003",
+      "question": "银行具有结算代理资格但仅持衍生产品基础类资格，为银行间债券市场非金融企业参与者办理企业套保的人民币利率互换，客户准入与银行资质应如何判断？",
+      "local_semantic_verdict": "pass_after_question_fix",
+      "rationale": "保留非金融客户为银行间债券市场参与者、客户套保、银行结算代理资格及仅持基础类资格等关键条件。客户套保与银行侧非套保代客交易的分类不同，两文件支持不同条件，未将两项参与条件视为全部准入条件。",
+      "evidence_authentication": [
+        {
+          "evidence_id": "Compliance-R003-E1",
+          "doc_id": "DOC000373",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        },
+        {
+          "evidence_id": "Compliance-R003-E2",
+          "doc_id": "DOC000789",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        },
+        {
+          "evidence_id": "Compliance-R003-E3",
+          "doc_id": "DOC000789",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        }
+      ],
+      "supporting_scope_context": [],
+      "document_removal_analysis": {
+        "DOC000373": "不能确定非金融参与者须以套保为目的以及做市商或结算代理对手方条件。",
+        "DOC000789": "不能确定银行侧代客交易分类及基础类资格不足的原因。"
+      },
+      "changed_from_v1_1": true
+    },
+    {
+      "id": "Compliance-R004",
+      "question": "外商独资银行新上线用于母行境外业务协作的重要信息系统，年度业务协作报告能否替代系统投产报告？两类报告应如何安排？",
+      "local_semantic_verdict": "replaced_and_pass",
+      "rationale": "移除深圳2012年文本，改为母行协作年度报告与重要系统新投产报告。分别核对一季度末、投产前至少20个工作日、实施后1个月；不把变更前10个工作日用于新投产。",
+      "evidence_authentication": [
+        {
+          "evidence_id": "Compliance-R004-E1",
+          "doc_id": "DOC000773",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        },
+        {
+          "evidence_id": "Compliance-R004-E2",
+          "doc_id": "DOC000783",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        },
+        {
+          "evidence_id": "Compliance-R004-E3",
+          "doc_id": "DOC000783",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        }
+      ],
+      "supporting_scope_context": [],
+      "document_removal_analysis": {
+        "DOC000773": "不能确定母行业务协作年度报告对象及一季度末期限。",
+        "DOC000783": "不能确定重要系统新投产前后的报告节点和与变更时点的区别。"
+      },
+      "changed_from_v1_1": true
+    },
+    {
+      "id": "Compliance-R005",
+      "question": "在沪外资银行拟离职信贷关键岗经离任审计查实违规授信已引发案件，员工及管理不严的相关负责人应如何追责，还需履行什么报告义务？",
+      "local_semantic_verdict": "replaced_and_pass",
+      "rationale": "原题将消保规则直接用于非金融企业，主体适用证据不足，已撤换。新题使用离任员工处置与上海案件管理责任两文件，明确拟离职、查实违规、案件及管理不严条件；不无条件追究所有管理人员。",
+      "evidence_authentication": [
+        {
+          "evidence_id": "Compliance-R005-E1",
+          "doc_id": "DOC000774",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        },
+        {
+          "evidence_id": "Compliance-R005-E2",
+          "doc_id": "DOC001111",
+          "independent_html_text_match": true,
+          "source_sha256_match": true,
+          "local_validity_match": true,
+          "publication_date_match": true,
+          "effective_date_match": true
+        }
+      ],
+      "supporting_scope_context": [
+        {
+          "doc_id": "DOC001111",
+          "article": "通知受文主体",
+          "quote": "在沪各外资法人银行、各外国银行分行：",
+          "independent_text_match": true
+        }
+      ],
+      "document_removal_analysis": {
+        "DOC000774": "不能确定拟离职违规员工的解除合同前追责、书面报告及涉嫌犯罪移交路径。",
+        "DOC001111": "不能确定在沪外资银行案件中相关负责人的管理责任追究条件。"
+      },
+      "changed_from_v1_1": true
+    }
+  ],
+  "failures": []
+}

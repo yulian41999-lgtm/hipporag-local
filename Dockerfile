@@ -1,0 +1,32 @@
+# No external Dockerfile frontend is needed by this file.
+ARG BASE_IMAGE=python:3.10-slim-bookworm
+FROM ${BASE_IMAGE} AS runtime
+
+ARG TORCH_INDEX_URL=https://download.pytorch.org/whl/cpu
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    HF_HUB_OFFLINE=1 \
+    TRANSFORMERS_OFFLINE=1 \
+    HIPPO_OUTPUT_DIR=/app/outputs/container \
+    HF_HOME=/app/cache/huggingface \
+    HF_HUB_CACHE=/app/cache/huggingface/hub \
+    TIKTOKEN_CACHE_DIR=/app/cache/tiktoken
+
+WORKDIR /app
+RUN sed -i 's|http://deb.debian.org|https://deb.debian.org|g' /etc/apt/sources.list.d/debian.sources && apt-get update && apt-get install -y --no-install-recommends libgomp1 && rm -rf /var/lib/apt/lists/*
+COPY vendor/HippoRAG/ /app/vendor/HippoRAG/
+COPY requirements.txt /app/requirements.txt
+RUN python -m pip install --no-cache-dir torch==2.5.1 --index-url ${TORCH_INDEX_URL}
+RUN python -m pip install --no-cache-dir -r requirements.txt && python -m pip check
+COPY settings.py local_embedding.py run.py probe_llm.py config.json upstream_revision.txt /app/
+COPY business.py business_qa.py business_config.json container_cli.py /app/
+COPY evaluation/ /app/evaluation/
+COPY data/chinese_demo.json data/chinese_demo_corpus.json /app/data/
+RUN mkdir -p /app/models /app/outputs /app/cache
+ENTRYPOINT ["python", "/app/container_cli.py"]
+CMD ["embedding"]
+
+# Optional image that includes model weights and the complete business dataset.
+FROM runtime AS bundled
+COPY models/bge-m3/ /app/models/bge-m3/
+COPY data/ /app/data/

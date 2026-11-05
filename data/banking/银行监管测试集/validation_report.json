@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "question_count": 15,
+  "question_types": {
+    "Fact Retrieval": 10,
+    "Complex Reasoning": 5
+  },
+  "distinct_document_count": 12,
+  "evidence_passage_count": 22,
+  "cross_document_reasoning_count": 5,
+  "maximum_questions_per_document": 3,
+  "document_question_counts": {
+    "DOC000021": 1,
+    "DOC000178": 2,
+    "DOC000373": 1,
+    "DOC000659": 1,
+    "DOC000661": 1,
+    "DOC000773": 2,
+    "DOC000774": 2,
+    "DOC000782": 1,
+    "DOC000783": 3,
+    "DOC000789": 2,
+    "DOC000796": 2,
+    "DOC001111": 2
+  },
+  "all_sources_locally_marked_valid": true,
+  "answer_style": "结论＋分项法规依据及原文＋适用分析＋总结",
+  "inference_question_count": 15,
+  "audited_dataset_hash_match": true,
+  "question_character_range": [
+    30,
+    69
+  ],
+  "answer_character_range": [
+    433,
+    1384
+  ],
+  "adapter_rejection_checks": {
+    "missing_id": true,
+    "duplicate_id": true,
+    "wrong_context_type": true
+  },
+  "errors": [],
+  "review_scope": "本脚本核验结构、来源版本、原文一致性、推理输入及评测适配，并确认题库与content_audit.json所记录哈希一致；历史逐题语义与独立HTML解析记录见该文件。通过不代表重新完成法律语义复审或全部外部现行效力确认。"
+}

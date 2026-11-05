@@ -1,0 +1,12 @@
+{
+  "llm_model": "qwen3.8-27B-raw",
+  "llm_base_url": "http://10.253.170.81:8006/v1",
+  "llm_api_key_env": "HIPPO_LLM_API_KEY",
+  "embedding_path": "models/bge-m3",
+  "embedding_model_id": "BAAI/bge-m3",
+  "embedding_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+  "device": "auto",
+  "batch_size": 1,
+  "max_seq_length": 512,
+  "output_dir": "outputs/smoke"
+}

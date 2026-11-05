@@ -1,0 +1,6 @@
+{
+  "tools/compare_evidence_modes.py": "9eb9b6dd76a998d0f4a75cf5f23c1f787240a905e59058af93533082b236d5c8",
+  "tools/repair_evidence_comparison.py": "3ecd3f96a42220764c77e7dc7f4c38f095a31861821b3288614975c9d1a54123",
+  "tools/summarize_evidence_comparison.py": "4b3c88b6823e3135a0be12e96eb347052473946b656f0c1ef8074d7e3dcb9e2c",
+  "docs/evidence-mode-comparison.md": "8e0b110a75540d73b06d0c5a54395c75d724c8628c7b459210fb5d1255801719"
+}

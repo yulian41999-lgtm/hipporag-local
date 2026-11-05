@@ -1,0 +1,13 @@
+{
+  "overall_calendar_seconds": 638.6989720100537,
+  "api_attempts": 90,
+  "saved_api_responses": 90,
+  "responses_missing_usage": 0,
+  "input_tokens": 43343,
+  "output_tokens": 35285,
+  "total_tokens": 78628,
+  "api_attempt_seconds_sum": 619.6290392978117,
+  "api_response_seconds_sum": 619.6290392978117,
+  "api_response_seconds_mean": 6.884767103309018,
+  "accounting": "service usage; SDK retries disabled; errors without usage have unknown consumption"
+}

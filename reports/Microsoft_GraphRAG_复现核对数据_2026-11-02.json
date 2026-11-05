@@ -1,0 +1,361 @@
+{
+  "project": "Microsoft GraphRAG",
+  "version": "3.3.0",
+  "source_root": "/home/ailab/data/HippoRAG/Microsoft_GraphRAG",
+  "score_path": "/home/ailab/data/HippoRAG/Microsoft_GraphRAG/outputs/evaluation15_20261102_094712/repair/scores.json",
+  "index_status": {
+    "state": "complete",
+    "started_at": "2026-10-30T21:04:37.458164+08:00",
+    "pid": 3322309,
+    "session_id": 3322309,
+    "log_file": "/home/ailab/data/HippoRAG/Microsoft_GraphRAG/logs/full-index-detached-20261030-210437-439874.log",
+    "concurrent_requests": 6,
+    "source_documents": 1700,
+    "full_run_started": true,
+    "launch_mode": "nohup + new session + file stdio",
+    "exit_code": 0,
+    "finished_at": "2026-10-31T21:27:30.984870+08:00"
+  },
+  "stats": {
+    "total_runtime": 87769.77694320679,
+    "num_documents": 1700,
+    "update_documents": 0,
+    "input_load_time": 0,
+    "workflows": {
+      "load_input_documents": {
+        "overall": 0.8395497798919678,
+        "peak_memory_bytes": 37724577,
+        "memory_delta_bytes": 1040148,
+        "tracemalloc_overhead_bytes": 927472
+      },
+      "create_base_text_units": {
+        "overall": 7.807196855545044,
+        "peak_memory_bytes": 68101086,
+        "memory_delta_bytes": 24671494,
+        "tracemalloc_overhead_bytes": 29804304
+      },
+      "create_final_documents": {
+        "overall": 1.1784272193908691,
+        "peak_memory_bytes": 45252341,
+        "memory_delta_bytes": 270929,
+        "tracemalloc_overhead_bytes": 118352
+      },
+      "extract_graph": {
+        "overall": 48807.42379927635,
+        "peak_memory_bytes": 235340396,
+        "memory_delta_bytes": 38944888,
+        "tracemalloc_overhead_bytes": 30446288
+      },
+      "finalize_graph": {
+        "overall": 32.92390513420105,
+        "peak_memory_bytes": 109735839,
+        "memory_delta_bytes": 168670,
+        "tracemalloc_overhead_bytes": 290768
+      },
+      "extract_covariates": {
+        "overall": 0.00013637542724609375,
+        "peak_memory_bytes": 6465,
+        "memory_delta_bytes": 432,
+        "tracemalloc_overhead_bytes": 2160
+      },
+      "create_communities": {
+        "overall": 15.087889194488525,
+        "peak_memory_bytes": 108905510,
+        "memory_delta_bytes": 1106769,
+        "tracemalloc_overhead_bytes": 1810576
+      },
+      "create_final_text_units": {
+        "overall": 18.42056679725647,
+        "peak_memory_bytes": 56158790,
+        "memory_delta_bytes": 73434,
+        "tracemalloc_overhead_bytes": 135888
+      },
+      "create_community_reports": {
+        "overall": 37896.92187190056,
+        "peak_memory_bytes": 389093582,
+        "memory_delta_bytes": 40452269,
+        "tracemalloc_overhead_bytes": 25973840
+      },
+      "generate_text_embeddings": {
+        "overall": 988.9137587547302,
+        "peak_memory_bytes": 151350312,
+        "memory_delta_bytes": 18125563,
+        "tracemalloc_overhead_bytes": 15105056
+      }
+    }
+  },
+  "tables": {
+    "documents": 1700,
+    "text_units": 4012,
+    "entities": 33184,
+    "relationships": 62538,
+    "communities": 7115,
+    "community_reports": 7115
+  },
+  "summary": {
+    "overall": {
+      "metrics": {
+        "context_relevancy": {
+          "mean": 0.8333333333333334,
+          "expected_n": 15,
+          "valid_n": 15,
+          "failed_n": 0
+        },
+        "evidence_recall": {
+          "mean": 0.7111111111111111,
+          "expected_n": 15,
+          "valid_n": 15,
+          "failed_n": 0
+        },
+        "rouge_l": {
+          "mean": 0.3206248009295718,
+          "expected_n": 15,
+          "valid_n": 15,
+          "failed_n": 0
+        },
+        "answer_correctness": {
+          "mean": 0.5537079482100948,
+          "expected_n": 15,
+          "valid_n": 15,
+          "failed_n": 0
+        }
+      },
+      "empty_answer_n": 0
+    },
+    "Fact Retrieval": {
+      "metrics": {
+        "context_relevancy": {
+          "mean": 0.95,
+          "expected_n": 10,
+          "valid_n": 10,
+          "failed_n": 0
+        },
+        "evidence_recall": {
+          "mean": 0.9,
+          "expected_n": 10,
+          "valid_n": 10,
+          "failed_n": 0
+        },
+        "rouge_l": {
+          "mean": 0.3587775938770528,
+          "expected_n": 10,
+          "valid_n": 10,
+          "failed_n": 0
+        },
+        "answer_correctness": {
+          "mean": 0.6041503365847144,
+          "expected_n": 10,
+          "valid_n": 10,
+          "failed_n": 0
+        }
+      },
+      "empty_answer_n": 0
+    },
+    "Complex Reasoning": {
+      "metrics": {
+        "context_relevancy": {
+          "mean": 0.6,
+          "expected_n": 5,
+          "valid_n": 5,
+          "failed_n": 0
+        },
+        "evidence_recall": {
+          "mean": 0.3333333333333333,
+          "expected_n": 5,
+          "valid_n": 5,
+          "failed_n": 0
+        },
+        "rouge_l": {
+          "mean": 0.24431921503460977,
+          "expected_n": 5,
+          "valid_n": 5,
+          "failed_n": 0
+        },
+        "answer_correctness": {
+          "mean": 0.4528231714608558,
+          "expected_n": 5,
+          "valid_n": 5,
+          "failed_n": 0
+        }
+      },
+      "empty_answer_n": 0
+    }
+  },
+  "repair": {
+    "source": "/home/ailab/data/HippoRAG/Microsoft_GraphRAG/outputs/evaluation15_20261102_094712/scores/scores.json",
+    "source_sha256": "0ad9a99acfb9a0ac734a0247c0c69a8a5b0fdfd3448467d2acc55a2255557537",
+    "judge_max_tokens": 8192,
+    "judge_timeout_seconds": 240,
+    "successful_scores_preserved": true
+  },
+  "same_question_gold_evidence": true,
+  "same_source_ids": true,
+  "question_count": 15,
+  "prediction_ok": 15,
+  "valid_metrics": 60,
+  "same_scoring_sources": {
+    "evaluation/metrics.py": true,
+    "evaluation/judge.py": true,
+    "evaluation/tokenization.py": true
+  },
+  "repaired_targets": [
+    [
+      "Compliance-R003",
+      "answer_correctness"
+    ]
+  ],
+  "rows": [
+    {
+      "id": "Compliance-F001",
+      "type": "Fact Retrieval",
+      "metrics": {
+        "context_relevancy": 1.0,
+        "evidence_recall": 1.0,
+        "rouge_l": 0.40704070407040704,
+        "answer_correctness": 0.6643823963403702
+      }
+    },
+    {
+      "id": "Compliance-F002",
+      "type": "Fact Retrieval",
+      "metrics": {
+        "context_relevancy": 1.0,
+        "evidence_recall": 1.0,
+        "rouge_l": 0.43705941591137965,
+        "answer_correctness": 0.5534293628052661
+      }
+    },
+    {
+      "id": "Compliance-F003",
+      "type": "Fact Retrieval",
+      "metrics": {
+        "context_relevancy": 0.5,
+        "evidence_recall": 0.0,
+        "rouge_l": 0.2403846153846154,
+        "answer_correctness": 0.2924995977017615
+      }
+    },
+    {
+      "id": "Compliance-F004",
+      "type": "Fact Retrieval",
+      "metrics": {
+        "context_relevancy": 1.0,
+        "evidence_recall": 1.0,
+        "rouge_l": 0.3525641025641026,
+        "answer_correctness": 0.7212646386840127
+      }
+    },
+    {
+      "id": "Compliance-F005",
+      "type": "Fact Retrieval",
+      "metrics": {
+        "context_relevancy": 1.0,
+        "evidence_recall": 1.0,
+        "rouge_l": 0.308300395256917,
+        "answer_correctness": 0.6365436025355992
+      }
+    },
+    {
+      "id": "Compliance-F006",
+      "type": "Fact Retrieval",
+      "metrics": {
+        "context_relevancy": 1.0,
+        "evidence_recall": 1.0,
+        "rouge_l": 0.3911764705882353,
+        "answer_correctness": 0.8034633845090866
+      }
+    },
+    {
+      "id": "Compliance-F007",
+      "type": "Fact Retrieval",
+      "metrics": {
+        "context_relevancy": 1.0,
+        "evidence_recall": 1.0,
+        "rouge_l": 0.426497277676951,
+        "answer_correctness": 0.6624099016189575
+      }
+    },
+    {
+      "id": "Compliance-F008",
+      "type": "Fact Retrieval",
+      "metrics": {
+        "context_relevancy": 1.0,
+        "evidence_recall": 1.0,
+        "rouge_l": 0.2831050228310502,
+        "answer_correctness": 0.5811064304674373
+      }
+    },
+    {
+      "id": "Compliance-F009",
+      "type": "Fact Retrieval",
+      "metrics": {
+        "context_relevancy": 1.0,
+        "evidence_recall": 1.0,
+        "rouge_l": 0.3425814234016888,
+        "answer_correctness": 0.465554541349411
+      }
+    },
+    {
+      "id": "Compliance-F010",
+      "type": "Fact Retrieval",
+      "metrics": {
+        "context_relevancy": 1.0,
+        "evidence_recall": 1.0,
+        "rouge_l": 0.3990665110851809,
+        "answer_correctness": 0.6608495098352433
+      }
+    },
+    {
+      "id": "Compliance-R001",
+      "type": "Complex Reasoning",
+      "metrics": {
+        "context_relevancy": 0.0,
+        "evidence_recall": 0.0,
+        "rouge_l": 0.22796081923419412,
+        "answer_correctness": 0.23411351442337036
+      }
+    },
+    {
+      "id": "Compliance-R002",
+      "type": "Complex Reasoning",
+      "metrics": {
+        "context_relevancy": 0.5,
+        "evidence_recall": 0.5,
+        "rouge_l": 0.2184873949579832,
+        "answer_correctness": 0.417764274441466
+      }
+    },
+    {
+      "id": "Compliance-R003",
+      "type": "Complex Reasoning",
+      "metrics": {
+        "context_relevancy": 1.0,
+        "evidence_recall": 0.3333333333333333,
+        "rouge_l": 0.24755189972581276,
+        "answer_correctness": 0.4236704558134079
+      }
+    },
+    {
+      "id": "Compliance-R004",
+      "type": "Complex Reasoning",
+      "metrics": {
+        "context_relevancy": 0.5,
+        "evidence_recall": 0.3333333333333333,
+        "rouge_l": 0.33119533527696793,
+        "answer_correctness": 0.8347216979512628
+      }
+    },
+    {
+      "id": "Compliance-R005",
+      "type": "Complex Reasoning",
+      "metrics": {
+        "context_relevancy": 1.0,
+        "evidence_recall": 0.5,
+        "rouge_l": 0.19640062597809077,
+        "answer_correctness": 0.3538459146747718
+      }
+    }
+  ],
+  "same_source_raw_hashes": true,
+  "source_document_count": 1700
+}

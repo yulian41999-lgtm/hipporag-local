@@ -1,0 +1,579 @@
+{
+  "as_of": "2026-11-05",
+  "corpus_verification": {
+    "document_ids_equal": true,
+    "source_file_sha256_equal": true,
+    "documents": 1700,
+    "document_hashes_sha256": "f5e7eefc5bf31e0e72b87b8d45b5407c0c5a6ca8db1350681042a621c96bcb02",
+    "note": "Compare stored per-source file hashes; not current raw-file rehash or equality of differently cleaned/chunked text"
+  },
+  "gold_equal": true,
+  "question_count": 15,
+  "costs": [
+    {
+      "project": "HippoRAG2",
+      "mode": "original",
+      "qa": {
+        "responses": 30,
+        "input_tokens": 89318,
+        "output_tokens": 10546,
+        "total_tokens": 99864,
+        "core_seconds": 307.4852135628462,
+        "calendar_seconds": 325.058030648157,
+        "api_sum_seconds": 214.77584620192647,
+        "api_mean_seconds": 7.159194873397549,
+        "per_question_seconds_sum": 221.6235625660047
+      },
+      "judge": {
+        "responses": 96,
+        "input_tokens": 155088,
+        "output_tokens": 66086,
+        "total_tokens": 221174,
+        "calendar_seconds": 1354.0288856970146,
+        "api_sum_seconds": 1212.150399315171,
+        "api_mean_seconds": 12.626566659533031
+      },
+      "qa_parts": {
+        "retrieval": {
+          "responses": 15,
+          "total_tokens": 57098
+        },
+        "generation": {
+          "responses": 15,
+          "total_tokens": 42766
+        }
+      }
+    },
+    {
+      "project": "HippoRAG2",
+      "mode": "graph_only",
+      "qa": {
+        "responses": 30,
+        "input_tokens": 60250,
+        "output_tokens": 7737,
+        "total_tokens": 67987,
+        "core_seconds": 159.2653635861352,
+        "calendar_seconds": 166.1591696543619,
+        "api_sum_seconds": 139.08601519837976,
+        "api_mean_seconds": 4.636200506612658,
+        "per_question_seconds_sum": 142.45879878662527
+      },
+      "judge": {
+        "responses": 90,
+        "input_tokens": 43343,
+        "output_tokens": 35285,
+        "total_tokens": 78628,
+        "calendar_seconds": 638.6989720100537,
+        "api_sum_seconds": 619.6290392978117,
+        "api_mean_seconds": 6.884767103309018
+      },
+      "qa_parts": {
+        "retrieval": {
+          "responses": 15,
+          "total_tokens": 57095
+        },
+        "generation": {
+          "responses": 15,
+          "total_tokens": 10892
+        }
+      }
+    },
+    {
+      "project": "GraphRAG",
+      "mode": "original",
+      "qa": {
+        "responses": 30,
+        "input_tokens": 78828,
+        "output_tokens": 9067,
+        "total_tokens": 87895,
+        "core_seconds": 169.45075784623623,
+        "calendar_seconds": 217.5069170985371,
+        "api_sum_seconds": 164.78867878299206,
+        "api_mean_seconds": 5.492955959433069,
+        "per_question_seconds_sum": 169.45075784623623
+      },
+      "judge": {
+        "responses": 90,
+        "input_tokens": 242587,
+        "output_tokens": 41429,
+        "total_tokens": 284016,
+        "calendar_seconds": 790.3950753305107,
+        "api_sum_seconds": 780.6562133254483,
+        "api_mean_seconds": 8.673957925838314
+      },
+      "qa_parts": {
+        "generation": {
+          "responses": 15,
+          "total_tokens": 87442
+        },
+        "retrieval_embedding": {
+          "responses": 15,
+          "total_tokens": 453
+        }
+      }
+    },
+    {
+      "project": "GraphRAG",
+      "mode": "graph_only",
+      "qa": {
+        "responses": 30,
+        "input_tokens": 34456,
+        "output_tokens": 6311,
+        "total_tokens": 40767,
+        "core_seconds": 120.76756603270769,
+        "calendar_seconds": 128.31663723755628,
+        "api_sum_seconds": 118.56651134416461,
+        "api_mean_seconds": 3.952217044805487,
+        "per_question_seconds_sum": 120.76756603270769
+      },
+      "judge": {
+        "responses": 90,
+        "input_tokens": 102185,
+        "output_tokens": 37385,
+        "total_tokens": 139570,
+        "calendar_seconds": 680.0318261310458,
+        "api_sum_seconds": 664.9179784413427,
+        "api_mean_seconds": 7.387977538237141
+      },
+      "qa_parts": {
+        "generation": {
+          "responses": 15,
+          "total_tokens": 40314
+        },
+        "retrieval_embedding": {
+          "responses": 15,
+          "total_tokens": 453
+        }
+      }
+    }
+  ],
+  "quality": {
+    "HippoRAG2 / original": {
+      "overall": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.7,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.6555555555555556,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.3499929494758552,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.5677524445163616,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      },
+      "Fact Retrieval": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.85,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.9,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.41320147964699816,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.6461174436225753,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      },
+      "Complex Reasoning": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.4,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.16666666666666666,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.22357588913356902,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.41102244630393453,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      }
+    },
+    "HippoRAG2 / graph_only": {
+      "overall": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.26666666666666666,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.4666666666666667,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.2733850739064604,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.49476553967233344,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      },
+      "Fact Retrieval": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.4,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.5,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.3015844032006178,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.5159638299009447,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      },
+      "Complex Reasoning": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.0,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.4,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.2169864153181456,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.45236895921511094,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      }
+    },
+    "GraphRAG / original": {
+      "overall": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.8333333333333334,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.7111111111111111,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.3185269966699332,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.5352360552698598,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      },
+      "Fact Retrieval": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.95,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.9,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.36059657832180203,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.5881299051708143,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      },
+      "Complex Reasoning": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.6,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.3333333333333333,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.2343878333661955,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.429448355467951,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      }
+    },
+    "GraphRAG / graph_only": {
+      "overall": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.4,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.4666666666666667,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.24629405151809777,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.4621463499937883,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      },
+      "Fact Retrieval": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.55,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.6,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.2635710768902978,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.48121976117827014,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      },
+      "Complex Reasoning": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.1,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.2,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.21174000077369773,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.4239995276248246,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      }
+    }
+  },
+  "hippo_recovery_partial_cost": {
+    "records": 5,
+    "input_tokens": 3188,
+    "output_tokens": 1605,
+    "source": "recovery_validation.json failed_recovery.metadata billable fields; partial historical recovery only",
+    "total_tokens": 4793
+  },
+  "index_checks": {
+    "HippoRAG2": {
+      "unchanged": true,
+      "before_file_count": 9,
+      "after_file_count": 9
+    },
+    "GraphRAG": {
+      "checked_files": 5580,
+      "changed_files": [],
+      "new_files": []
+    }
+  },
+  "sources": {
+    "hipporag_local/outputs/evidence_mode_comparison_20261105-095518/comparison.json": {
+      "sha256": "60e6e8068a2a085146a2141c38182b6e37b586fb003d2b51d5d16525dca33b0c",
+      "bytes": 16056
+    },
+    "hipporag_local/outputs/evidence_mode_comparison_20261105-095518/protocol.json": {
+      "sha256": "b2ff6ec0ba08dc76da68aabf8dd63f41e5de10032ea0899734615cb98d648286",
+      "bytes": 1025
+    },
+    "hipporag_local/outputs/evidence_mode_comparison_20261105-095518/historical_build_cost.json": {
+      "sha256": "e6cfced0039487d23e7481506628f897d9913f8a92e510ad8f9a58544139ecbd",
+      "bytes": 854
+    },
+    "hipporag_local/outputs/evidence_mode_comparison_20261105-095518/index_integrity.json": {
+      "sha256": "27dbbc80a3998b634e38e397c2d998cf17198f54e7e932d31c3913a20fe7e173",
+      "bytes": 74
+    },
+    "hipporag_local/outputs/evidence_mode_comparison_20261105-095518/retrieval_consistency.json": {
+      "sha256": "e9aac1ff293c0e3bb12e747b186c382d1be2b4449f0b3d687905f20a7dd20a0e",
+      "bytes": 179
+    },
+    "Microsoft_GraphRAG/outputs/comparison_20261105/summary.json": {
+      "sha256": "4ced11b5dac634481aae0959f6078a079b7079a959501547e4450c1e05acb31f",
+      "bytes": 37876
+    },
+    "Microsoft_GraphRAG/outputs/comparison_20261105/historical_costs.json": {
+      "sha256": "542c8ee326bf44c753369c9b0d6a2638c466c545534400ff8a2eaf344ae5fd60",
+      "bytes": 7552
+    },
+    "hipporag_local/outputs/server_1700_recovered_20261030-163200/recovery_completed.json": {
+      "sha256": "8da9db29f9655f7dcf8439b8fbac596510f2e6d16e412ff3e84292e7edc15955",
+      "bytes": 794
+    },
+    "hipporag_local/outputs/server_1700_recovered_20261030-163200/recovery_validation.json": {
+      "sha256": "6301417a6a9577b66262e43017b74c8bbaed2416b877cc7a0b6e224032cda85e",
+      "bytes": 43427
+    },
+    "hipporag_local/business_config.json": {
+      "sha256": "05f73017dfdb0567b6b0fd50d2f4b2494e7deecc374d32193548b348f58cc105",
+      "bytes": 391
+    },
+    "hipporag_local/upstream_revision.txt": {
+      "sha256": "cb4d12828b6b712e322e6d8389519ebc40e37578baa1e47ec68abdd039eb1855",
+      "bytes": 41
+    },
+    "Microsoft_GraphRAG/settings.yaml": {
+      "sha256": "01db05b528191e37079ce539fa32383b04a1b8a82dbf7787cc5b43b6c8abdc11",
+      "bytes": 3468
+    }
+  },
+  "model_calls_in_this_report": 0,
+  "index_rebuilds_in_this_report": 0
+}

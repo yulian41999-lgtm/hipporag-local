@@ -1,0 +1,7 @@
+# Run from this folder with the corecoder interpreter.
+-e ./vendor/HippoRAG
+sentence-transformers==3.3.1
+datasets==4.4.1
+dill==0.4.0
+multiprocess==0.70.18
+fsspec==2025.10.0

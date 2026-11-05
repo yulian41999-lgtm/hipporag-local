@@ -1,0 +1,24 @@
+{
+  "status": "complete",
+  "verified_at": "2026-10-30T16:39:59.725848+08:00",
+  "documents": 1700,
+  "chunks": 5337,
+  "vector_rows": {
+    "vdb_chunk": 5337,
+    "vdb_fact": 73586,
+    "vdb_entity": 48873
+  },
+  "graph_nodes": 54210,
+  "graph_edges": 235028,
+  "graph_directed": false,
+  "graph_path": "/home/ailab/data/HippoRAG/hipporag_local/outputs/server_1700_recovered_20261030-163200/banking/index/qwen3.8-27B-raw_BAAI_bge-m3/graph.pickle",
+  "index_state": "ready",
+  "completion_marker_present": true,
+  "source_cache_rows_preserved_unchanged": 10676,
+  "new_cache_rows": 5,
+  "cache_integrity": "ok",
+  "output": "/home/ailab/data/HippoRAG/hipporag_local/outputs/server_1700_recovered_20261030-163200",
+  "entity_batch_size": 64,
+  "fact_batch_size": 32,
+  "openie_max_workers": 4
+}

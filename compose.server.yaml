@@ -1,0 +1,26 @@
+# Offline deployment: load the GPU image first; never implicitly pull/build it.
+services:
+  hipporag:
+    image: hipporag-local:gpu
+    platform: linux/amd64
+    pull_policy: never
+    env_file:
+      - .env
+    environment:
+      HIPPO_EMBEDDING_PATH: /app/models/bge-m3
+      HIPPO_DEVICE: cuda
+      HIPPO_BATCH_SIZE: "1"
+      HIPPO_OUTPUT_DIR: /app/outputs/server_gpu
+    volumes:
+      - ./models:/app/models:ro
+      - ./data:/app/data:ro
+      - ./outputs:/app/outputs
+      - ./cache:/app/cache
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    command: ["embedding"]

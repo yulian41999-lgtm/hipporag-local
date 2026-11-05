@@ -1,0 +1,18 @@
+services:
+  hipporag:
+    image: hipporag-local:cpu
+    build:
+      context: .
+      target: runtime
+    env_file:
+      - .env
+    environment:
+      HIPPO_EMBEDDING_PATH: /app/models/bge-m3
+      HIPPO_OUTPUT_DIR: /app/outputs/docker_cpu
+      HIPPO_DEVICE: cpu
+    volumes:
+      - ./models:/app/models:ro
+      - ./data:/app/data:ro
+      - ./outputs:/app/outputs
+      - ./cache:/app/cache
+    command: ["embedding"]

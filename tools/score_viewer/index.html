@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>测试集评分进度</title>
+<style>
+:root{color-scheme:light dark;--bg:light-dark(#f7f9fc,#101822);--surface:light-dark(#fff,#192330);--ink:light-dark(#152b40,#e2ebf6);--muted:light-dark(#5d7084,#a6b7ca);--line:light-dark(#d6e0e9,#34475b);--blue:light-dark(#2168b4,#83bafa);--green:light-dark(#177751,#79cfac);--red:light-dark(#a6323c,#ff9da4);--soft:light-dark(#eaf2fc,#223c59)}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font:15px/1.5 system-ui,"Microsoft YaHei",sans-serif}main{max-width:1240px;margin:auto;padding:26px}h1{font-size:25px;margin:0;font-weight:600}h2{font-size:18px;margin:0 0 12px;font-weight:600}h3{font-size:15px;margin:0 0 6px}p{margin:6px 0}header{display:flex;justify-content:space-between;gap:16px;align-items:start;margin-bottom:24px}.muted{color:var(--muted)}.small{font-size:12px}a{color:var(--blue)}.pill{display:inline-block;padding:3px 9px;border-radius:20px;background:var(--soft);font-size:12px}.stages{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}.stage{padding:14px 16px;border-top:3px solid var(--line);background:var(--surface)}.stage.done{border-color:var(--green)}.stage.active{border-color:var(--blue)}.stage strong{font-size:24px;font-variant-numeric:tabular-nums;font-weight:500}.progress{height:8px;background:var(--line);margin:12px 0 6px;border-radius:5px;overflow:hidden}.progress span{display:block;height:100%;background:var(--blue);transition:width .35s}.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px}.question-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:12px 0}button{font:inherit;cursor:pointer;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink);padding:10px;min-width:0}button:hover{background:var(--soft)}button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}.question{display:grid;text-align:left;gap:5px}.question b{font-weight:500}.question span{font-size:12px}.question.complete span{color:var(--green)}.question.running span{color:var(--blue)}.question.error span{color:var(--red)}.question[aria-pressed=true]{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}.detail{padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:8px;margin-top:18px;overflow-wrap:anywhere}.metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}.metric label{display:flex;justify-content:space-between;gap:8px;font-size:13px}.track{height:7px;background:var(--line);margin-top:6px;border-radius:5px;overflow:hidden}.track i{height:100%;display:block;background:var(--blue)}.metric .small{margin-top:4px}.aggregate{margin-top:24px}.calls{list-style:none;padding:0;margin:0}.calls li{padding:10px 0;border-bottom:1px solid var(--line);font-size:12px;overflow-wrap:anywhere}.ok{color:var(--green)}.error-text{color:var(--red)}.checkpoints{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.checkpoints span{font-size:12px;padding:3px 7px;border:1px solid var(--line);border-radius:4px}.notice{margin-top:18px;font-size:12px;color:var(--muted)}.score-number{font-variant-numeric:tabular-nums}.link-row{margin-top:14px}.loading{padding:30px 0}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.calls{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}}@media(max-width:560px){main{padding:16px}header{display:block}.stages{gap:8px}.stage{padding:10px}.stage strong{font-size:21px}.question-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.metric-grid{grid-template-columns:1fr}.calls{display:block}h1{font-size:22px}}
+</style></head>
+<body><main>
+<header><div><h1>15 题测试集 · 评分进度</h1><p class="muted small">1700 篇语料 · 每 10 秒自动刷新 · 只读</p></div><div><span class="pill" id="state">正在连接</span><p id="updated" class="small muted"></p></div></header>
+<div id="connection" class="small muted" role="status" aria-live="polite">读取评分记录…</div>
+<div class="stages">
+<section class="stage" id="answer-stage"><h3>① 生成答案</h3><strong id="answered">—</strong><p class="small muted">检索资料 → 模型回答</p></section>
+<section class="stage" id="eval-stage"><h3>② 四指标评分</h3><strong id="evaluated">—</strong><p id="current" class="small muted">等待评分状态</p></section>
+<section class="stage" id="report-stage"><h3>③ 汇总结果</h3><strong id="report-state">—</strong><p class="small muted">15 题完整结果与有效样本数</p></section>
+</div>
+<div class="layout"><section>
+<h2>逐题进度</h2><div class="progress" role="progressbar" aria-label="已完成评分题数" aria-valuemin="0" aria-valuemax="15" id="progress"><span id="progress-fill"></span></div>
+<p class="small muted">选择题号查看问题、分数和裁判调用。完整评分后才写入该题的四项分数。</p>
+<div class="question-grid" id="questions"></div>
+<section class="detail" id="detail"><h2 id="detail-id">选择题目</h2><p id="detail-question"></p><p class="small muted" id="detail-meta"></p><div class="metric-grid" id="detail-metrics"></div><div class="checkpoints" id="checkpoints"></div></section>
+<section class="aggregate"><h2 id="aggregate-title">已评分题目的阶段均值</h2><div class="metric-grid" id="aggregate-metrics"></div><p class="notice">分数范围 0–1，越高越好。阶段均值仅覆盖已完成且有效的评分，不代表最终结果。裁判模型与生成模型相同，结果需结合来源人工复核。</p></section>
+</section><aside><h2>最近的裁判调用</h2><p id="judge-summary" class="small muted"></p><p id="judge-updated" class="small muted"></p><ol id="calls" class="calls"></ol><div class="link-row"><a href="http://127.0.0.1:8790/" target="_blank" rel="noopener">打开图谱浏览器 ↗</a></div></aside></div>
+</main>
+<script>
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id);
+const metricNames={context_relevancy:'上下文相关性',evidence_recall:'证据召回',rouge_l:'ROUGE-L',answer_correctness:'答案正确性'};
+const stateNames={complete:'已评分',running:'评分中',waiting:'等待',error:'含评分错误'};
+let data=null,selected=null,manual=false,busy=false;
+function fmt(value){return typeof value==='number'&&Number.isFinite(value)?value.toFixed(3):'—'}
+function time(value){return value?new Date(value).toLocaleTimeString('zh-CN',{hour12:false}):'—'}
+function metric(key,value,note){
+ const div=document.createElement('div');div.className='metric';
+ const label=document.createElement('label'),name=document.createElement('span'),score=document.createElement('span');name.textContent=metricNames[key];score.textContent=fmt(value);score.className='score-number';label.append(name,score);
+ const track=document.createElement('div');track.className='track';const fill=document.createElement('i');fill.style.width=(typeof value==='number'?Math.max(0,Math.min(1,value))*100:0)+'%';track.append(fill);
+ const meta=document.createElement('p');meta.className='small muted';meta.textContent=note;div.append(label,track,meta);return div;
+}
+function details(){
+ const q=data.rows.find(x=>x.id===selected)||data.rows[0];selected=q.id;
+ $('detail-id').textContent=q.id+' · '+stateNames[q.state];$('detail-question').textContent=q.question;
+ $('detail-meta').textContent=q.question_type+' · 裁判成功 '+q.judge_ok+' 次 / 报错 '+q.judge_errors+' 次';
+ $('detail-metrics').replaceChildren();
+ Object.keys(metricNames).forEach(key=>{const m=q.metrics[key];$('detail-metrics').append(metric(key,m&&m.status==='ok'?m.score:null,m?(m.status==='ok'?'有效评分':(m.reason||m.error||'评分失败')):'该题完整评分尚未保存'))});
+ const completed=data.recent_calls.filter(x=>x.task.split('/')[0]===q.id);
+ $('checkpoints').replaceChildren();
+ completed.slice().reverse().forEach(c=>{const span=document.createElement('span');span.className=c.status==='ok'?'ok':'error-text';span.textContent=c.task.slice(q.id.length+1)+' · '+(c.status==='ok'?'完成':'报错');$('checkpoints').append(span)});
+ document.querySelectorAll('.question').forEach(e=>e.setAttribute('aria-pressed',e.dataset.id===selected?'true':'false'));
+}
+function render(){
+ $('state').textContent=data.status==='repair'?'失败指标补评中':data.status==='complete'?'评分完成':data.status==='failed'?'任务失败':data.status==='evaluate'?(data.coordinator_alive?'评分进行中':'进程已结束，待核查'):'答案生成中';
+ $('updated').textContent='最近读取 '+time(data.checked_at);
+ $('answered').textContent=data.answer_ok+'/'+data.expected;$('evaluated').textContent=data.evaluated+'/'+data.expected;
+ $('current').textContent=data.current?'当前：'+data.current:(data.status==='repair'?'保留有效评分，仅补评失败项':data.evaluated===data.expected?'所有题目已处理':'等待评分');
+ $('report-state').textContent=data.final_report_available?'已生成':'待生成';
+ $('answer-stage').classList.toggle('done',data.answer_ok===data.expected);
+ $('eval-stage').classList.toggle('active',(data.status==='evaluate'||data.status==='repair')&&data.coordinator_alive);
+ $('eval-stage').classList.toggle('done',data.evaluated===data.expected);
+ $('report-stage').classList.toggle('done',data.final_report_available);
+ $('progress').setAttribute('aria-valuenow',data.evaluated);$('progress-fill').style.width=(data.evaluated/data.expected*100)+'%';
+ if(!manual)selected=(data.status==='repair'&&data.rows.find(x=>x.state==='error')?data.rows.find(x=>x.state==='error').id:null)||data.current||(data.rows.find(x=>x.state==='complete')||data.rows[0]).id;
+ $('questions').replaceChildren();data.rows.forEach(q=>{
+  const button=document.createElement('button');button.className='question '+q.state;button.dataset.id=q.id;button.type='button';button.setAttribute('aria-label',q.id+' '+stateNames[q.state]);
+  const name=document.createElement('b'),state=document.createElement('span');name.textContent=q.id.replace('Compliance-','');state.textContent=stateNames[q.state];button.append(name,state);
+  button.addEventListener('click',()=>{selected=q.id;manual=true;details()});$('questions').append(button);
+ });details();
+ $('aggregate-title').textContent=data.final_report_available?'最终有效评分均值':'已评分题目的阶段均值';
+ $('aggregate-metrics').replaceChildren();Object.entries(data.aggregates).forEach(([key,v])=>$('aggregate-metrics').append(metric(key,v.mean,'有效 '+v.valid_n+'/'+data.expected+' · 失败 '+v.failed_n)));
+ $('judge-summary').textContent='成功 '+data.judge_ok+' 次 · 报错 '+data.judge_errors+' 次';
+ $('judge-updated').textContent='最近写入 '+time(data.judge_last_update);$('calls').replaceChildren();
+ data.recent_calls.forEach(c=>{const li=document.createElement('li'),line=document.createElement('div'),state=document.createElement('span');line.textContent=c.task;state.className=c.status==='ok'?'ok':'error-text';state.textContent=(c.status==='ok'?'已完成':'报错：'+(c.error||'未知'))+' · 尝试 '+(c.attempt+1);li.append(line,state);$('calls').append(li)});
+}
+async function refresh(){
+ if(busy)return;busy=true;
+ try{const r=await fetch('/api/status',{cache:'no-store'});if(!r.ok)throw Error('评分文件暂不可读');data=await r.json();render();$('connection').textContent='状态已同步；不触发新的模型调用。';$('connection').className='small muted'}
+ catch(e){$('connection').textContent='连接暂不可用，将自动重试；已有评分不会丢失。';$('connection').className='small error-text'}finally{busy=false}
+}
+refresh();setInterval(refresh,10000);
+})();
+</script></body></html>

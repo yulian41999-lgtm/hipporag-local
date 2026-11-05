@@ -1,0 +1,11 @@
+{
+  "business_corpus_manifest.json": "ea82af343628bb2d28861a44c34eab8e876fd2308a60851882b6e87ea859a50a",
+  "openie_results_ner_qwen3.8-27B-raw.json": "1f6d4c5560c5c4b31d8400ff8c70010e4695403292c77b6254ead1d6f724caf4",
+  "qwen3.8-27B-raw_BAAI_bge-m3/chunk_embeddings/vdb_chunk.parquet": "c4f1a223b2796c9b18c37fdba7ea4f3f6698546fa2d569118f0956e31668bd40",
+  "qwen3.8-27B-raw_BAAI_bge-m3/chunk_metadata.json": "d0235b7740c6e84561971e0ef1ccfddad6f8bb19f2499e5c5a6049d7349cb301",
+  "qwen3.8-27B-raw_BAAI_bge-m3/entity_embeddings/vdb_entity.parquet": "3b4f5a03aa6a446c4379c8a95b24515c66bda2f0fc3e23dca9f8b3777a1bfce3",
+  "qwen3.8-27B-raw_BAAI_bge-m3/fact_embeddings/vdb_fact.parquet": "eeaa24d20799c1e6c72e91aaffcff5c6aa0976fb91ade07d45bd5a396b873830",
+  "qwen3.8-27B-raw_BAAI_bge-m3/graph.pickle": "7ef5e2835c1e7b46ea2bda79a971cb05938c068d85c9630f0322fe47d6a91c60",
+  "qwen3.8-27B-raw_BAAI_bge-m3/index_manifest.json": "817f34423f3c4d82f7d8161258747f99901bde246690b17e97347cb050816af1",
+  "qwen3.8-27B-raw_BAAI_bge-m3/openie_state.json": "1f6d4c5560c5c4b31d8400ff8c70010e4695403292c77b6254ead1d6f724caf4"
+}

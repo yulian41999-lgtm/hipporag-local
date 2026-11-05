@@ -1,0 +1,26 @@
+{
+  "overall_calendar_seconds": 1354.0288856970146,
+  "api_attempts": 96,
+  "saved_api_responses": 96,
+  "responses_missing_usage": 0,
+  "input_tokens": 155088,
+  "output_tokens": 66086,
+  "total_tokens": 221174,
+  "api_attempt_seconds_sum": 1212.150399315171,
+  "api_response_seconds_sum": 1212.150399315171,
+  "api_response_seconds_mean": 12.626566659533031,
+  "accounting": "service usage; SDK retries disabled; errors without usage have unknown consumption",
+  "repair_cost": {
+    "api_attempts": 3,
+    "saved_api_responses": 3,
+    "responses_missing_usage": 0,
+    "input_tokens": 6845,
+    "output_tokens": 9990,
+    "total_tokens": 16835,
+    "api_attempt_seconds_sum": 163.03248267434537,
+    "api_response_seconds_sum": 163.03248267434537,
+    "api_response_seconds_mean": 54.34416089144846,
+    "accounting": "service usage; SDK retries disabled; errors without usage have unknown consumption",
+    "overall_calendar_seconds": 163.52031563036144
+  }
+}

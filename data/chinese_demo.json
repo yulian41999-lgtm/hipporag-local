@@ -1,0 +1,11 @@
+[
+  {
+    "id":"synthetic-chinese-multihop-001",
+    "question":"澄川银行总部所在的城市属于哪个省？",
+    "answer":["临江省"],
+    "paragraphs":[
+      {"title":"澄川银行概况","text":"澄川银行的总部位于海州市。","is_supporting":true},
+      {"title":"海州市行政归属","text":"海州市属于临江省。","is_supporting":true}
+    ]
+  }
+]

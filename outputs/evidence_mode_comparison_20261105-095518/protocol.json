@@ -1,0 +1,31 @@
+{
+  "index": "/home/ailab/data/HippoRAG/hipporag_local/outputs/server_1700_recovered_20261030-163200/banking/index",
+  "started_at": "2026-11-05T01:55:28.709914+00:00",
+  "rebuild": false,
+  "modes": [
+    "original",
+    "graph"
+  ],
+  "historical_audit": {
+    "generation_usage": "available",
+    "actual_context": "available",
+    "per_question_total_time": "available",
+    "all_retrieval_api_usage": "not isolated",
+    "api_response_times": "not recorded",
+    "decision": "rerun both modes for consistent metering"
+  },
+  "historical_build_cost": {
+    "status": "not recorded in comparison; no rebuild",
+    "input_tokens": null,
+    "output_tokens": null,
+    "total_tokens": null
+  },
+  "quality_metrics": [
+    "context_relevancy",
+    "evidence_recall",
+    "rouge_l",
+    "answer_correctness"
+  ],
+  "graph_scope": "reranked existing fact triples used as retrieval seeds; no new extraction or graph expansion",
+  "citation_check": "context references checked; graph triples are not verbatim source quotations"
+}

@@ -1,0 +1,21 @@
+{
+  "historical_predictions": "outputs/server_1700_recovered_20261030-163200/banking/predictions.json",
+  "questions": 15,
+  "generation_usage_count": 15,
+  "saved_actual_messages": 15,
+  "per_question_total_latency_count": 15,
+  "historical_judge_log": "outputs/server_1700_recovered_20261030-163200/banking/evaluation/formal_15_20261030-173251/judge_calls.jsonl",
+  "judge_saved_records": 93,
+  "judge_usage_count": 92,
+  "coverage": {
+    "generation_tokens": "已有，需区别缓存命中与实际新增调用",
+    "judge_tokens": "已有，原始及修复日志需去重，重试保留",
+    "api_response_count": "可从日志补算；旧问答未完整分离检索调用",
+    "actual_generation_context": "已有",
+    "per_question_latency": "已有",
+    "overall_core_qa_time": "可参考历史协调日志，但边界与新实验未统一",
+    "api_duration_sum_and_mean": "缺失，需新增记录并重跑",
+    "retrieval_generation_separate_durations": "缺失，需新增记录并重跑"
+  },
+  "decision": "两模式均重跑，保留历史结果，不重建索引"
+}

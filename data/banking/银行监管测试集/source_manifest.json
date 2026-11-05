@@ -1,0 +1,178 @@
+[
+  {
+    "doc_id": "DOC000021",
+    "title": "中华人民共和国外资银行管理条例实施细则（2019修订）",
+    "path": "D01_银行业务与审慎监管/DOC000021__中华人民共和国外资银行管理条例实施细则（2019修订）.html",
+    "validity": "现行有效",
+    "publication_date": "2019.12.18",
+    "effective_date": "2019.12.18",
+    "document_number": "中国银行保险监督管理委员会令2019年第6号",
+    "agency": "中国银行保险监督管理委员会(已撤销)",
+    "sha256": "fd7ce84c9e47019e88bbc831b1d32754376328494041686e5b1b9d20cc1c1213",
+    "question_ids": [
+      "Compliance-F009"
+    ]
+  },
+  {
+    "doc_id": "DOC000178",
+    "title": "中国人民银行关于使用融资租赁登记公示系统进行融资租赁交易查询的通知",
+    "path": "D01_银行业务与审慎监管/DOC000178__中国人民银行关于使用融资租赁登记公示系统进行融资租赁交易查询的通知.html",
+    "validity": "现行有效",
+    "publication_date": "2014.03.20",
+    "effective_date": "2014.03.20",
+    "document_number": "银发〔2014〕93号",
+    "agency": "中国人民银行",
+    "sha256": "2c7b61ae009c1fc294da067d435025405462d6f74c4777d11c38aed03f17be0e",
+    "question_ids": [
+      "Compliance-F003",
+      "Compliance-R002"
+    ]
+  },
+  {
+    "doc_id": "DOC000373",
+    "title": "中国人民银行关于开展人民币利率互换业务有关事宜的通知",
+    "path": "D01_银行业务与审慎监管/DOC000373__中国人民银行关于开展人民币利率互换业务有关事宜的通知.html",
+    "validity": "现行有效",
+    "publication_date": "2008.01.18",
+    "effective_date": "2008.02.18",
+    "document_number": "银发〔2008〕18号",
+    "agency": "中国人民银行",
+    "sha256": "b8e5a96ed9742dadaee23183b5381194a86f86c47ce503aa995e9dae4c9fc9cd",
+    "question_ids": [
+      "Compliance-R003"
+    ]
+  },
+  {
+    "doc_id": "DOC000659",
+    "title": "中国人民银行行政许可实施办法（2020）",
+    "path": "D01_银行业务与审慎监管/DOC000659__中国人民银行行政许可实施办法（2020）.html",
+    "validity": "现行有效",
+    "publication_date": "2020.03.20",
+    "effective_date": "2020.06.01",
+    "document_number": "中国人民银行令〔2020〕第1号",
+    "agency": "中国人民银行",
+    "sha256": "84099da8cbb2acfc553b31798b4e32ec9f5a98738d8a0a7d24afd772b554a671",
+    "question_ids": [
+      "Compliance-F007"
+    ]
+  },
+  {
+    "doc_id": "DOC000661",
+    "title": "中国人民银行西安分行关于制定陕西存款类金融机构金融消费者保护指导原则",
+    "path": "D01_银行业务与审慎监管/DOC000661__中国人民银行西安分行关于制定陕西存款类金融机构金融消费者保护指导原则.html",
+    "validity": "现行有效",
+    "publication_date": "2011.07.28",
+    "effective_date": "2011.07.28",
+    "document_number": "",
+    "agency": "中国人民银行西安分行",
+    "sha256": "9b027661b01adc0a24b289e3119cb1382c1f74fea49313dea13d23f95438d007",
+    "question_ids": [
+      "Compliance-F008"
+    ]
+  },
+  {
+    "doc_id": "DOC000773",
+    "title": "中国银监会办公厅关于外资银行开展部分业务有关事项的通知",
+    "path": "D01_银行业务与审慎监管/DOC000773__中国银监会办公厅关于外资银行开展部分业务有关事项的通知.html",
+    "validity": "现行有效",
+    "publication_date": "2017.03.10",
+    "effective_date": "2017.03.10",
+    "document_number": "银监办发〔2017〕12号",
+    "agency": "中国银行业监督管理委员会(已撤销)",
+    "sha256": "d051a0605ad727d477750fea51321dbf9353747dc264e777dc34ac6e9de9235e",
+    "question_ids": [
+      "Compliance-F001",
+      "Compliance-R004"
+    ]
+  },
+  {
+    "doc_id": "DOC000774",
+    "title": "中国银监会办公厅关于银行业金融机构员工离辞职后流向借款企业有关问题风险提示的通知",
+    "path": "D01_银行业务与审慎监管/DOC000774__中国银监会办公厅关于银行业金融机构员工离辞职后流向借款企业有关问题风险提示的通知.html",
+    "validity": "现行有效",
+    "publication_date": "2008.03.21",
+    "effective_date": "2008.03.21",
+    "document_number": "银监办发〔2008〕43号",
+    "agency": "中国银行业监督管理委员会(已撤销)",
+    "sha256": "3619e88da788c1af4708ccc6ea953ac7b6ef87ea08f46df8ab88fb3945a7d491",
+    "question_ids": [
+      "Compliance-F005",
+      "Compliance-R005"
+    ]
+  },
+  {
+    "doc_id": "DOC000782",
+    "title": "中国银行业监督管理委员会上海监管局关于印发《上海商业银行客户投诉处理指导意见》的通知",
+    "path": "D01_银行业务与审慎监管/DOC000782__中国银行业监督管理委员会上海监管局关于印发《上海商业银行客户投诉处理指导意见》的通知.html",
+    "validity": "现行有效",
+    "publication_date": "2008.04.30",
+    "effective_date": "2008.04.30",
+    "document_number": "沪银监通〔2008〕39号",
+    "agency": "中国银行业监督管理委员会上海监管局(已撤销)",
+    "sha256": "3d13670bde9d3346ea0883401f02ce6001ec3f2213e6d764fcd97b371f30e5cc",
+    "question_ids": [
+      "Compliance-F004"
+    ]
+  },
+  {
+    "doc_id": "DOC000783",
+    "title": "中国银行业监督管理委员会上海监管局办公室关于转发银监会办公厅《银行业金融机构重要信息系统投产及变更管理办法》的通知",
+    "path": "D01_银行业务与审慎监管/DOC000783__中国银行业监督管理委员会上海监管局办公室关于转发银监会办公厅《银行业金融机构重要信息系统投产及变更管理办法》的通知.html",
+    "validity": "现行有效",
+    "publication_date": "2010.01.12",
+    "effective_date": "2010.01.12",
+    "document_number": "沪银监办通〔2010〕7号",
+    "agency": "中国银行业监督管理委员会上海监管局办公室(已撤销)",
+    "sha256": "d24602343e087715c71c969991bde42cec4a06890779b7c5e103009ba1fc59b8",
+    "question_ids": [
+      "Compliance-F010",
+      "Compliance-R001",
+      "Compliance-R004"
+    ]
+  },
+  {
+    "doc_id": "DOC000789",
+    "title": "中国银行业监督管理委员会关于修改《金融机构衍生产品交易业务管理暂行办法》的决定（2011）",
+    "path": "D01_银行业务与审慎监管/DOC000789__中国银行业监督管理委员会关于修改《金融机构衍生产品交易业务管理暂行办法》的决定（2011）.html",
+    "validity": "现行有效",
+    "publication_date": "2011.01.05",
+    "effective_date": "2011.01.05",
+    "document_number": "中国银行业监督管理委员会令2011年第1号",
+    "agency": "中国银行业监督管理委员会(已撤销)",
+    "sha256": "c06c8e1435bc8d9b9c5f5d899e8466b9e807828e7fea442bc0e14007d97ff05a",
+    "question_ids": [
+      "Compliance-F002",
+      "Compliance-R003"
+    ]
+  },
+  {
+    "doc_id": "DOC000796",
+    "title": "中国银行业监督管理委员会关于印发农村合作金融机构社团贷款指引的通知",
+    "path": "D01_银行业务与审慎监管/DOC000796__中国银行业监督管理委员会关于印发农村合作金融机构社团贷款指引的通知.html",
+    "validity": "现行有效",
+    "publication_date": "2006.05.29",
+    "effective_date": "2006.05.29",
+    "document_number": "银监发〔2006〕37号",
+    "agency": "中国银行业监督管理委员会(已撤销)",
+    "sha256": "ae00dddfc8bc2b59e16ce543f64fac7adf1047549b046ee1813cb306f1a86292",
+    "question_ids": [
+      "Compliance-F006",
+      "Compliance-R002"
+    ]
+  },
+  {
+    "doc_id": "DOC001111",
+    "title": "关于进一步加强在沪外资银行操作风险防范和案件防控工作的通知",
+    "path": "D01_银行业务与审慎监管/DOC001111__关于进一步加强在沪外资银行操作风险防范和案件防控工作的通知.html",
+    "validity": "现行有效",
+    "publication_date": "2013.04.25",
+    "effective_date": "2013.04.25",
+    "document_number": "沪银监办通〔2013〕69号",
+    "agency": "中国银行业监督管理委员会上海监管局办公室(已撤销)",
+    "sha256": "b4455ee8527cfa0800fd4ca42bee18d1ca66c8e3fc13774645a94579b22bb580",
+    "question_ids": [
+      "Compliance-R001",
+      "Compliance-R005"
+    ]
+  }
+]

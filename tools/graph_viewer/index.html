@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>银行监管知识图谱 · 只读查看</title>
+<style>
+:root{color-scheme:light dark;--paper:light-dark(#f7f9fc,#101722);--panel:light-dark(#fff,#17202d);--ink:light-dark(#142638,#e4edf6);--quiet:light-dark(#566a7f,#a8b8ca);--line:light-dark(#d5dfea,#35465a);--blue:light-dark(#2674bd,#74b9f5);--orange:light-dark(#a76524,#efba80);--soft:light-dark(#e7f1fb,#223d58)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 system-ui,"Microsoft YaHei",sans-serif}main{max-width:1500px;margin:auto;padding:28px}h1{font-size:25px;font-weight:600;margin:0 0 4px}h2{font-size:18px;margin:0 0 8px}p{margin:6px 0}header{margin-bottom:22px}.muted{color:var(--quiet)}.tag{display:inline-block;font-size:12px;border:1px solid var(--line);padding:2px 9px;border-radius:20px;margin-left:12px;vertical-align:middle}.controls{display:grid;grid-template-columns:minmax(160px,1fr) minmax(200px,1.3fr) auto;gap:14px;align-items:end;margin-bottom:20px}label{display:grid;gap:6px;font-size:13px;color:var(--quiet)}input,select,button{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:9px 12px;min-width:0;width:100%}button{cursor:pointer;width:auto}button.primary{background:var(--blue);color:var(--panel);border-color:var(--blue)}button:disabled{opacity:.45;cursor:default}input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:22px}.graph-area{min-width:0}.graph-toolbar{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:10px}.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--quiet)}.legend i{display:inline-block;width:22px;border-top:1.4px solid var(--quiet);vertical-align:middle;margin-right:5px}.legend .passage{border-top-style:dashed}.legend .synonym{border-top-style:dotted}svg{display:block;width:100%;background:var(--panel);border:1px solid var(--line);border-radius:8px}svg text{fill:var(--ink);font:12px system-ui,"Microsoft YaHei",sans-serif}.edge{stroke:var(--line);stroke-width:1.2}.edge.active{stroke:var(--blue);stroke-width:1.6}.edge.passage{stroke-dasharray:6 4}.edge.synonym{stroke-dasharray:2 4}.node-shape{fill:var(--soft);stroke:var(--blue);stroke-width:1}.node-shape.passage{fill:var(--panel);stroke:var(--orange)}.node-shape.selected{fill:var(--blue)}.node{cursor:pointer}.detail{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:20px;align-self:start}.detail h2{overflow-wrap:anywhere}.detail button{margin:12px 0}.detail ul{padding-left:19px}.detail li{margin-bottom:12px;overflow-wrap:anywhere}.small{font-size:12px}.excerpt{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.65 inherit;margin:10px 0 0}.status{min-height:24px;margin-bottom:10px}.foot{margin-top:8px;font-size:12px;color:var(--quiet)}summary{cursor:pointer;overflow-wrap:anywhere}details{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}#empty{padding:40px 16px;text-align:center}.error{color:light-dark(#a22a2a,#ffaaaa)}[hidden]{display:none!important}
+@media(max-width:1050px){.workspace{grid-template-columns:minmax(0,1fr)}.detail{width:100%}}@media(max-width:650px){main{padding:16px}.controls{grid-template-columns:1fr}.controls button{width:100%}h1{font-size:22px}.graph-toolbar{align-items:flex-start}input,select,button{font-size:16px}}
+</style>
+</head>
+<body><main>
+<header><h1>银行监管知识图谱<span class="tag">只读</span></h1><p id="stats" class="muted">正在读取已保存的图…</p></header>
+<div class="controls">
+<label for="search">实体关键词<input id="search" type="search" placeholder="例如：中国人民银行、贷款、资本" autocomplete="off"></label>
+<label for="matches">匹配实体<select id="matches" aria-label="匹配实体"><option>加载中…</option></select></label>
+<button class="primary" id="open">查看关系</button>
+</div>
+<div id="status" class="status small muted" role="status" aria-live="polite"></div>
+<div class="workspace">
+<section class="graph-area" aria-label="局部知识图">
+<div class="graph-toolbar"><h2 id="graph-title">实体邻域</h2><div class="legend"><span><i></i>事实</span><span><i class="passage"></i>文档</span><span><i class="synonym"></i>相似实体</span></div></div>
+<svg id="graph" role="img" aria-label="可交互的局部图，点击节点查看详情"><title>实体局部邻域</title></svg>
+<p class="foot" id="sampling"></p><p class="foot">点击节点查看详情，再点“以此为中心”继续浏览。布局距离不代表相似度。</p>
+</section>
+<aside class="detail" aria-label="节点详情">
+<h2 id="node-title">节点详情</h2><p class="small muted" id="node-meta"></p>
+<label for="node-picker" class="small">当前图中的节点<select id="node-picker"></select></label>
+<button id="recenter">以此为中心</button><h3 class="small">关联事实与连接</h3><ul id="relations"></ul>
+<details id="source" hidden><summary id="source-title">文档来源</summary><pre class="excerpt" id="excerpt"></pre></details>
+</aside>
+</div>
+</main>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id), ns='http://www.w3.org/2000/svg';
+let current=null, selected=null, stats=null, searchTimer=null, searchSerial=0, graphSerial=0;
+const kinds={fact:'事实关联',passage:'文档关联',synonym:'相似实体'};
+function status(text,error=false){$('status').textContent=text;$('status').classList.toggle('error',error)}
+async function api(path){const response=await fetch(path,{cache:'no-store'});const result=await response.json();if(!response.ok)throw Error(result.error||'读取失败');return result}
+function make(tag,attrs,text){const e=document.createElementNS(ns,tag);Object.entries(attrs||{}).forEach(([k,v])=>e.setAttribute(k,v));if(text!==undefined)e.textContent=text;return e}
+async function search(){
+ const serial=++searchSerial,q=$('search').value.trim();status('检索实体…');
+ try{
+  const result=await api('/api/search?q='+encodeURIComponent(q));if(serial!==searchSerial)return;
+  $('matches').replaceChildren();
+  result.matches.forEach(n=>{const o=document.createElement('option');o.value=n.id;o.textContent=n.label+' · '+n.degree+' 个连接';$('matches').append(o)});
+  $('open').disabled=result.matches.length===0;
+  if(!result.matches.length){const o=document.createElement('option');o.textContent='没有匹配实体';$('matches').append(o)}
+  status('找到 '+result.total.toLocaleString('zh-CN')+' 个实体'+(result.total>30?'，列出连接数较高的前 30 个':''));
+ }catch(e){status(e.message,true)}
+}
+async function load(id){
+ const serial=++graphSerial;status('读取节点关系…');
+ try{
+  const result=await api('/api/neighborhood?id='+encodeURIComponent(id)+'&limit=16');if(serial!==graphSerial)return;
+  current=result;selected=current.center;
+  $('graph-title').textContent=current.seed;
+  $('node-picker').replaceChildren();
+  current.nodes.forEach(n=>{const o=document.createElement('option');o.value=n.id;o.textContent=(n.center?'中心 · ':'')+n.label;$('node-picker').append(o)});
+  $('sampling').textContent='展示 '+(current.nodes.length-1)+'/'+current.total_neighbors+' 个一跳邻居 · 按边权优先选取 · 已保留所选节点间的边';
+  draw();select(selected);status('图已加载 · '+current.nodes.length+' 个节点 / '+current.edges.length+' 条边');
+ }catch(e){status(e.message,true)}
+}
+function select(id){
+ if(!current)return;selected=Number(id);
+ const n=current.nodes.find(x=>x.id===selected);if(!n)return;
+ $('node-picker').value=selected;$('node-title').textContent=n.label;
+ $('node-meta').textContent=(n.type==='passage'?'文本块':'实体')+' · 全图连接数 '+n.degree.toLocaleString('zh-CN');
+ $('recenter').disabled=n.id===current.center;
+ const related=current.edges.filter(e=>e.source===selected||e.target===selected),list=$('relations');list.replaceChildren();
+ let seen=new Set(),count=0;
+ related.forEach(e=>{
+  (e.triples||[]).forEach(t=>{
+   const text=t[0]+' —'+t[1]+'→ '+t[2];if(seen.has(text)||count>=10)return;seen.add(text);count++;
+   const li=document.createElement('li');li.textContent=text;
+   if(e.documents&&e.documents.length){const note=document.createElement('div');note.className='small muted';note.textContent='来源：'+e.documents.join('、');li.append(note)}
+   list.append(li);
+  });
+ });
+ if(!count)related.slice(0,10).forEach(e=>{const other=current.nodes.find(x=>x.id===(e.source===selected?e.target:e.source));const li=document.createElement('li');li.textContent=(kinds[e.kind]||e.kind)+'：'+other.label+(e.kind==='synonym'?' · '+e.weight.toFixed(3):'');list.append(li)});
+ if(!related.length){const li=document.createElement('li');li.textContent='该节点在当前局部图中没有关联边';list.append(li)}
+ $('source').hidden=!n.excerpt;if(n.excerpt){$('source-title').textContent=n.source_id+' · '+n.title;$('excerpt').textContent=n.excerpt}
+ document.querySelectorAll('[data-node]').forEach(e=>e.classList.toggle('selected',Number(e.dataset.node)===selected));
+ document.querySelectorAll('[data-source]').forEach(e=>e.classList.toggle('active',Number(e.dataset.source)===selected||Number(e.dataset.target)===selected));
+}
+function draw(){
+ if(!current)return;
+ const svg=$('graph'),w=Math.round(svg.parentElement.getBoundingClientRect().width),neighbors=current.nodes.filter(n=>!n.center);
+ const half=Math.ceil(neighbors.length/2),height=Math.max(400,half*68+68),cx=w/2,cy=height/2,positions={};
+ positions[current.center]={x:cx,y:cy};svg.setAttribute('height',height);svg.setAttribute('viewBox','0 0 '+w+' '+height);
+ svg.querySelectorAll('g').forEach(e=>e.remove());
+ neighbors.forEach((n,i)=>{const side=i<half?0:1,row=side?i-half:i,num=side?neighbors.length-half:half;positions[n.id]={x:w*(side ? 0.81 : 0.19),y:38+(height-88)*(row+.5)/num}});
+ const links=make('g');current.edges.forEach(e=>{const a=positions[e.source],b=positions[e.target];links.append(make('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,class:'edge '+e.kind,'data-source':e.source,'data-target':e.target}))});svg.append(links);
+ const marks=make('g');current.nodes.forEach(n=>{
+  const p=positions[n.id],group=make('g',{class:'node'}),shape=n.type==='passage'?make('rect',{x:p.x-7,y:p.y-7,width:14,height:14,class:'node-shape passage','data-node':n.id}):make('circle',{cx:p.x,cy:p.y,r:n.center?12:8,class:'node-shape','data-node':n.id});
+  group.append(make('title',{},n.label+' · '+n.degree+' 个连接'));group.append(shape);
+  const cap=w<450?7:11,chars=Array.from(n.label),parts=chars.length>cap*2?chars.slice(0,cap*2-1).concat('…'):chars;
+  const text=make('text',{x:p.x,y:p.y+25,'text-anchor':'middle'});text.append(make('tspan',{x:p.x,dy:0},parts.slice(0,cap).join('')));if(parts.length>cap)text.append(make('tspan',{x:p.x,dy:16},parts.slice(cap).join('')));group.append(text);
+  group.addEventListener('click',()=>select(n.id));marks.append(group);
+ });svg.append(marks);select(selected);
+}
+$('search').addEventListener('input',()=>{clearTimeout(searchTimer);searchTimer=setTimeout(search,250)});
+$('search').addEventListener('keydown',e=>{if(e.key==='Enter'){clearTimeout(searchTimer);search().then(()=>{if(!$('open').disabled)load($('matches').value)})}});
+$('open').addEventListener('click',()=>load($('matches').value));
+$('node-picker').addEventListener('change',()=>select($('node-picker').value));
+$('recenter').addEventListener('click',()=>load(selected));
+new ResizeObserver(()=>draw()).observe($('graph').parentElement);
+api('/api/stats').then(async s=>{stats=s;$('stats').textContent=s.documents+' 篇语料 · '+s.nodes.toLocaleString('zh-CN')+' 个节点 · '+s.edges.toLocaleString('zh-CN')+' 条边 · 索引 '+s.state;$('search').value='小额担保贷款';await search();await load(s.default_id)}).catch(e=>status(e.message,true));
+})();
+</script></body></html>

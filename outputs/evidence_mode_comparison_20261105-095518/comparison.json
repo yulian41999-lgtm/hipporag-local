@@ -1,0 +1,575 @@
+{
+  "original": {
+    "answer_cost": {
+      "mode": "original",
+      "core_qa_seconds": 307.4852135628462,
+      "overall_calendar_seconds": 325.058030648157,
+      "retrieval_preparation_seconds": 3.1434590546414256,
+      "preflight_calls": 0,
+      "cache_condition": "fresh process and empty local LLM response cache; provider/OS cache uncontrolled",
+      "api_attempts": 30,
+      "saved_api_responses": 30,
+      "responses_missing_usage": 0,
+      "input_tokens": 89318,
+      "output_tokens": 10546,
+      "total_tokens": 99864,
+      "api_attempt_seconds_sum": 214.77584620192647,
+      "api_response_seconds_sum": 214.77584620192647,
+      "api_response_seconds_mean": 7.159194873397549,
+      "accounting": "service usage; SDK retries disabled; errors without usage have unknown consumption"
+    },
+    "judge_cost": {
+      "overall_calendar_seconds": 1354.0288856970146,
+      "api_attempts": 96,
+      "saved_api_responses": 96,
+      "responses_missing_usage": 0,
+      "input_tokens": 155088,
+      "output_tokens": 66086,
+      "total_tokens": 221174,
+      "api_attempt_seconds_sum": 1212.150399315171,
+      "api_response_seconds_sum": 1212.150399315171,
+      "api_response_seconds_mean": 12.626566659533031,
+      "accounting": "service usage; SDK retries disabled; errors without usage have unknown consumption",
+      "repair_cost": {
+        "api_attempts": 3,
+        "saved_api_responses": 3,
+        "responses_missing_usage": 0,
+        "input_tokens": 6845,
+        "output_tokens": 9990,
+        "total_tokens": 16835,
+        "api_attempt_seconds_sum": 163.03248267434537,
+        "api_response_seconds_sum": 163.03248267434537,
+        "api_response_seconds_mean": 54.34416089144846,
+        "accounting": "service usage; SDK retries disabled; errors without usage have unknown consumption",
+        "overall_calendar_seconds": 163.52031563036144
+      }
+    },
+    "quality": {
+      "overall": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.7,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.6555555555555556,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.3499929494758552,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.5677524445163616,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      },
+      "Fact Retrieval": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.85,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.9,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.41320147964699816,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.6461174436225753,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      },
+      "Complex Reasoning": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.4,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.16666666666666666,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.22357588913356902,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.41102244630393453,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      }
+    },
+    "answer_checks": [
+      {
+        "id": "Compliance-F001",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F002",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F003",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F004",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F005",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F006",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F007",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F008",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F009",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F010",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-R001",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-R002",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-R003",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-R004",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-R005",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      }
+    ]
+  },
+  "graph": {
+    "answer_cost": {
+      "mode": "graph",
+      "core_qa_seconds": 159.2653635861352,
+      "overall_calendar_seconds": 166.1591696543619,
+      "retrieval_preparation_seconds": 3.220244803465903,
+      "preflight_calls": 0,
+      "cache_condition": "fresh process and empty local LLM response cache; provider/OS cache uncontrolled",
+      "api_attempts": 30,
+      "saved_api_responses": 30,
+      "responses_missing_usage": 0,
+      "input_tokens": 60250,
+      "output_tokens": 7737,
+      "total_tokens": 67987,
+      "api_attempt_seconds_sum": 139.08601519837976,
+      "api_response_seconds_sum": 139.08601519837976,
+      "api_response_seconds_mean": 4.636200506612658,
+      "accounting": "service usage; SDK retries disabled; errors without usage have unknown consumption"
+    },
+    "judge_cost": {
+      "overall_calendar_seconds": 638.6989720100537,
+      "api_attempts": 90,
+      "saved_api_responses": 90,
+      "responses_missing_usage": 0,
+      "input_tokens": 43343,
+      "output_tokens": 35285,
+      "total_tokens": 78628,
+      "api_attempt_seconds_sum": 619.6290392978117,
+      "api_response_seconds_sum": 619.6290392978117,
+      "api_response_seconds_mean": 6.884767103309018,
+      "accounting": "service usage; SDK retries disabled; errors without usage have unknown consumption"
+    },
+    "quality": {
+      "overall": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.26666666666666666,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.4666666666666667,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.2733850739064604,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.49476553967233344,
+            "expected_n": 15,
+            "valid_n": 15,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      },
+      "Fact Retrieval": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.4,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.5,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.3015844032006178,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.5159638299009447,
+            "expected_n": 10,
+            "valid_n": 10,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      },
+      "Complex Reasoning": {
+        "metrics": {
+          "context_relevancy": {
+            "mean": 0.0,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "evidence_recall": {
+            "mean": 0.4,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "rouge_l": {
+            "mean": 0.2169864153181456,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          },
+          "answer_correctness": {
+            "mean": 0.45236895921511094,
+            "expected_n": 5,
+            "valid_n": 5,
+            "failed_n": 0
+          }
+        },
+        "empty_answer_n": 0
+      }
+    },
+    "answer_checks": [
+      {
+        "id": "Compliance-F001",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F002",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F003",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F004",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F005",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F006",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F007",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F008",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F009",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-F010",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-R001",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-R002",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-R003",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-R004",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      },
+      {
+        "id": "Compliance-R005",
+        "status": "ok",
+        "empty_answer": false,
+        "references_valid": true,
+        "has_reference": true
+      }
+    ]
+  },
+  "graph_savings": {
+    "total_tokens": 0.31920411759993594,
+    "overall_calendar_seconds": 0.4888322884284847,
+    "core_qa_seconds": 0.48203895159471355
+  },
+  "historical_build_cost": {
+    "source": "outputs/server_1700_recovered_20261030-163200/index.log",
+    "scope": "historical cached recovery, not complete original building bill",
+    "phases": {
+      "NER:": {
+        "billable_prompt_tokens": 0,
+        "billable_completion_tokens": 0,
+        "logical_prompt_tokens": 2910951,
+        "logical_completion_tokens": 594629,
+        "num_cache_hit": 5337
+      },
+      "Extracting triples:": {
+        "billable_prompt_tokens": 0,
+        "billable_completion_tokens": 0,
+        "logical_prompt_tokens": 6734418,
+        "logical_completion_tokens": 2836057,
+        "num_cache_hit": 5337
+      }
+    },
+    "original_build_input_tokens": null,
+    "original_build_output_tokens": null,
+    "original_build_total_tokens": null,
+    "full_end_to_end_build_seconds": null,
+    "note": "logical usage replays stored responses; do not add to current actual API consumption"
+  },
+  "stage_details": {
+    "original": {
+      "by_stage": {
+        "generation": {
+          "responses": 15,
+          "input_tokens": 33642,
+          "output_tokens": 9124,
+          "total_tokens": 42766,
+          "api_response_seconds_sum": 181.36206333432347,
+          "usage_missing": 0
+        },
+        "retrieval": {
+          "responses": 15,
+          "input_tokens": 55676,
+          "output_tokens": 1422,
+          "total_tokens": 57098,
+          "api_response_seconds_sum": 33.413782867603004,
+          "usage_missing": 0
+        }
+      },
+      "verification": {
+        "question_count": 15,
+        "all_actual_messages_saved": true,
+        "generation_errors": 0,
+        "empty_context_count": 0,
+        "refusal_phrase_count": 4,
+        "refusal_count_method": "heuristic phrase detection, not human adjudication",
+        "graph_context_is_only_selected_triples": null
+      }
+    },
+    "graph": {
+      "by_stage": {
+        "generation": {
+          "responses": 15,
+          "input_tokens": 4574,
+          "output_tokens": 6318,
+          "total_tokens": 10892,
+          "api_response_seconds_sum": 111.66441078204662,
+          "usage_missing": 0
+        },
+        "retrieval": {
+          "responses": 15,
+          "input_tokens": 55676,
+          "output_tokens": 1419,
+          "total_tokens": 57095,
+          "api_response_seconds_sum": 27.42160441633314,
+          "usage_missing": 0
+        }
+      },
+      "verification": {
+        "question_count": 15,
+        "all_actual_messages_saved": true,
+        "generation_errors": 0,
+        "empty_context_count": 0,
+        "refusal_phrase_count": 1,
+        "refusal_count_method": "heuristic phrase detection, not human adjudication",
+        "graph_context_is_only_selected_triples": true
+      }
+    }
+  },
+  "index_integrity": {
+    "unchanged": true,
+    "before_file_count": 9,
+    "after_file_count": 9
+  },
+  "retrieval_consistency": {
+    "same_seed_question_count": 14,
+    "different_seed_question_ids": [
+      "Compliance-F008"
+    ],
+    "note": "same retrieval configuration; separate LLM filtering calls can vary"
+  }
+}

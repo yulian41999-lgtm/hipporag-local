@@ -1,0 +1,5 @@
+{
+  "path": "vendor/HippoRAG/src/hipporag/information_extraction/openie_openai.py",
+  "original_sha256": "1e0a90dc939406b74f8f8acf2dd6536cb2529e961e3cde7c9e286bed9cce19e8",
+  "patched_sha256": "29e56641d49d38418cb5f2901417b901abd3195ff4fbb68f029a62ec8c35b4f5"
+}

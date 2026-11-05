@@ -1,0 +1,7 @@
+{
+  "same_seed_question_count": 14,
+  "different_seed_question_ids": [
+    "Compliance-F008"
+  ],
+  "note": "same retrieval configuration; separate LLM filtering calls can vary"
+}
